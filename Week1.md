@@ -73,7 +73,17 @@ class Solution:
 
 |类型|解决办法|其他说明|
 | :----: | :----:  | :----:  |
-|MDL 锁|查看 mysql 正在执行的 线程 ，然后 kill 相关锁住的 进程| show processlist 找到 Waiting for table metadata lock |
-|行级锁|show|
+|MDL 锁|查看 mysql 正在执行的 线程 ，然后 kill 相关锁住的 session| show processlist 找到 Waiting for table metadata lock |
+|flush|查看 mysql 正在执行的 线程 ，然后 kill 相关 flush 的 session|有可能是因为 flush 的时候，有相关的 sql select 查询|
+|等行锁| 通过 sys.innodb_lock_waits 这个表查看，哪些行级锁 | select * from t sys.innodb_lock_waits where locked_table='`test`.`t`'\G |
+|有无索引| 如果没有索引，可能会全表扫描|坏查询不一定是慢查询，需要考虑，如果数据量很大，那么也需要这样控制|
+| 一行却很慢 |一致性读的|因为有存在 开始 事务 后，还会有 update 其他字段的情况，所以在一致读/可重复读/读已提交/读未提交 这种情况下，需要进行读写分离，降低字段的 update 操作。|
+***
 
+***
+## Share
+> [server 增加 queue 提升性能](https://xie.infoq.cn/article/8f0179960545d0791a2e537e9)
+
+这部分主要是，在server 层面增加一层队列来应对，请求突升这种情况，是一种饮鸠止渴的应对方式，同时正确的应该是能够优化后端代码，
+同时实现自动扩容方式。
 ***
