@@ -1,4 +1,4 @@
-# ARTS week 1
+# ARTS week 2
 > 凡是过往，即为序章
 
 ***
