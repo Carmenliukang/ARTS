@@ -69,16 +69,14 @@ class Solution:
 > [mysql sql 执行慢的原因和处理方案](https://time.geekbang.org/column/article/74687)
 
 ### 概述
-    1. 锁
     
-    |类型|解决办法|其他说明|
-    | :----: | :----:  | :----:  |
-    |MDL 锁|查看 mysql 正在执行的 线程 ，然后 kill 相关锁住的 session| show processlist 找到 Waiting for table metadata lock |
-    |flush|查看 mysql 正在执行的 线程 ，然后 kill 相关 flush 的 session|有可能是因为 flush 的时候，有相关的 sql select 查询|
-    |等行锁| 通过 sys.innodb_lock_waits 这个表查看，哪些行级锁 | select * from t sys.innodb_lock_waits where locked_table='`test`.`t`'\G |
-    |有无索引| 如果没有索引，可能会全表扫描|坏查询不一定是慢查询，需要考虑，如果数据量很大，那么也需要这样控制|
-    | 一行却很慢 |一致性读的|因为有存在 开始 事务 后，还会有 update 其他字段的情况，所以在一致读/可重复读/读已提交/读未提交 这种情况下，需要进行读写分离，降低字段的 update 操作。|
-    ***
+|类型|解决办法|其他说明|
+| :----: | :----:  | :----:  |
+|MDL 锁|查看 mysql 正在执行的 线程 ，然后 kill 相关锁住的 session| show processlist 找到 Waiting for table metadata lock |
+|flush|查看 mysql 正在执行的 线程 ，然后 kill 相关 flush 的 session|有可能是因为 flush 的时候，有相关的 sql select 查询|
+|等行锁| 通过 sys.innodb_lock_waits 这个表查看，哪些行级锁 | select * from t sys.innodb_lock_waits where locked_table='`test`.`t`'\G |
+|有无索引| 如果没有索引，可能会全表扫描|坏查询不一定是慢查询，需要考虑，如果数据量很大，那么也需要这样控制|
+| 一行却很慢 |一致性读的|因为有存在 开始 事务 后，还会有 update 其他字段的情况，所以在一致读/可重复读/读已提交/读未提交 这种情况下，需要进行读写分离，降低字段的 update 操作。|
 
 ***
 ## Share
