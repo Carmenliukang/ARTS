@@ -1,11 +1,12 @@
 # ARTS Week 4
+*** 
 > 什么都无法舍弃的人，什么都无法得到。 --《进击的巨人》
 
 ***
 ## Algoithm
 > [直接求和](https://leetcode-cn.com/problems/qiu-12n-lcof)
 
-###概述
+### 概述
 求 1+2+...+n ，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。
 
 ### 分析
