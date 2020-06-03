@@ -1,8 +1,10 @@
 # ARTS Week 4
-*** 
-> 什么都无法舍弃的人，什么都无法得到。 --《进击的巨人》
 
 ***
+![图片](https://s1.ax1x.com/2020/06/03/tUc3LD.jpg)
+> 什么都无法舍弃的人，什么都无法得到。 --《进击的巨人》
+***
+
 ## Algoithm
 > [直接求和](https://leetcode-cn.com/problems/qiu-12n-lcof)
 
