@@ -33,5 +33,18 @@ class Solutionm:
 
 ***
 ## Review
-> [todo]()
+> [Flsk Thread-Locals](https://flask.palletsprojects.com/en/1.1.x/advanced_foreword/#thread-locals-in-flask)
+
+### 概述
+介绍了 Python Flask Thread-Locals 为什么使用 Thread-Locals，是为了能够快速开发，降低thread 安全的 额外开发。
+
+### 反思
+* 这种文章为什么会有这么多的赞？并且在首页会有一些推荐，确实因为这个论坛不仅仅是专门的技术论坛，同时确实标题很吸引眼球，自己的心态有很大的欠缺，
+需要锻炼快速判断文章的价值。
+* 同时希望可以推荐一些比较好的 英文技术 博客等阅读的资源。
+
+***
+## Tip
+>[Flsk Thread-Locals](https://flask.palletsprojects.com/en/1.1.x/advanced_foreword/#thread-locals-in-flask)
+
 
