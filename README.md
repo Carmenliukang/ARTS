@@ -1,4 +1,6 @@
 # ARTS
+> ![](https://s1.ax1x.com/2020/06/15/NCmH8e.jpg)
+>
 > 极客平台 打卡地址 http://gk.link/a/10ito
 >> 凡是过往，皆为序章
 
