@@ -51,8 +51,10 @@ class Solution:
         if root != None:
             # 显示右子树 遍历
             self.convertBST(root.right)
+            # 将其右子树遍历结果 同步给其他的成员。
             self.total += root.val
             root.val = self.total
+            # 依次遍历其做左子树
             self.convertBST(root.left)
 
         return root
