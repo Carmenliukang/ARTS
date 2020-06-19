@@ -1,6 +1,6 @@
 # ARTS Week 6
 >![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zdGF0aWMwMDEuZ2Vla2Jhbmcub3JnL2luZm9xLzI2LzI2NDY1YWFmZjZkNmIzZjY2OTUxZjljZDAwOTlhZTU2LmpwZWc?x-oss-process=image/format,png)
->>这个世界是残酷的
+>>仕方ないでしょ？世界は残酷なんだから 
 
 ***
 ## Algoithm
@@ -15,7 +15,7 @@
         输出:
         [
           [1,2,3],
-          [1,3,2],
+          [1,3,2],c
           [2,1,3],
           [2,3,1],
           [3,1,2],
