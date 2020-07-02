@@ -44,11 +44,11 @@
 ```
  
 
-提示：
-
-死亡列表 deadends 的长度范围为 [1, 500]。
-目标数字 target 不会在 deadends 之中。
-每个 deadends 和 target 中的字符串的数字会在 10,000 个可能的情况 '0000' 到 '9999' 中产生。
+    提示：
+    
+    死亡列表 deadends 的长度范围为 [1, 500]。
+    目标数字 target 不会在 deadends 之中。
+    每个 deadends 和 target 中的字符串的数字会在 10,000 个可能的情况 '0000' 到 '9999' 中产生。
 
 
 
@@ -171,30 +171,81 @@ int BFS(Node start, Node target) {
 
 ***
 ## Review
->[TODO]()
+>[7 Terminal Commands That Will Just Make You Smile](https://medium.com/better-programming/7-terminal-commands-that-will-just-make-you-smile-3f5bc8778080)
 
 
 ### 概述
+介绍了一些 linux 趣味命令行
+1. sl 
+
+   
+
+2. fortune
+
+    ![](https://miro.medium.com/max/1080/0*jWCXvQd_RbS94X-6.png)
+
+3. cowsay
+
+    ![](https://miro.medium.com/max/560/0*fwo-m6neieB0pFFT.png)
+
+4. toilet
+    
+    ![](https://miro.medium.com/max/762/0*xJChkPXgM0ZjeACk.png)
+
+5. oneko
+
+    ![](https://youtu.be/Nm3SkXThL0s)
+    
+6. xeyes
+
+7. cmatrix
 
 
 ### 思考
+工作中的一些小趣事，也是能够提高一定的工作效率。生活处处是惊喜，不论如何，都要不断调整，让生活更加美好才可以。
 
+Markdown 里面的 GIF 增加晚上补上。
 
 ***
 ## Tip
->[TODO]()
+>[操作系统内核与编程接口](https://time.geekbang.org/column/article/94486)
 
 ### 概述
+**Linux内核**
+
+分为用户态、内核态。只有进程被系统调度到内核态才能够访问内存，在用户态的时候，是不能访问到真实的内存数据，只能获取到虚拟内存中的数据。
+因此才会有协程的存在，避免了因为上下文切换导致的系统问题。
+![](https://static001.geekbang.org/resource/image/2b/b3/2b0adde3eca6262ae674a97f478c15b3.png)
+
+
+**动态库**：屏蔽底层操作，只保留最基本的操作
+* Windows 的 dll（Dynamic Link Library）；
+* Linux/Android 的 so（shared object）；
+* Mac/iOS 的 dylib（Mach-O Dynamic Library）。
+![](https://static001.geekbang.org/resource/image/37/11/372f60e314a3ec386844d4cd1db74411.jpg)
+
+**系统架构**
+![](https://static001.geekbang.org/resource/image/b2/e0/b2393a109f849bd91c991b1e750cb3e0.png)
 
 ### 思考
 
+Linux系统通过虚拟内存实现了安全性的保证，同时通过 Ring 0-3 实现了权限控制。
+现在的虚拟化技术，也是在linux系统的扩展，实现了更多的功能，以后的开发一定会越来越高效，新技术也会越来越多，不过更多的是从底层发展而来，就如docker和Linux系统中的虚拟内存是否有异曲同工？
+那么只有底层能够更加深入的了解，那么才能以不变应万变，知其然，同时知其所以然，才不会被时代抛弃。
+浅尝辄止，只会皮毛，那么最终一定会被时代抛弃。
 
 ***
 ## Share
->[TODO]()
+>[多任务：进程、线程与协程](https://time.geekbang.org/column/article/96324)
 
 ### 概述
+进程、线程 的成本在 执行体 的开销，包括本身和切换。
+由此而优化，那么就是降低 线程 数量，由此就有了异步的状态，epoll 去循环遍历，监控线程进度。
+那么异步的回调，就会陷入回调地狱，没有办法掌控其和调度，因此有了协程的存在。在用户态中调度，降低了切换的开销成本。
 
 ### 思考
+用户态中避免了系统调度，但是以后的 CPU 性能越来越高，这种成本是否可以忽略不计？那么协程存在的意义又是什么？
+协程是为了能够更加轻便的实现系统调度方式。更加轻松的应对IO问题。
+
 
 
