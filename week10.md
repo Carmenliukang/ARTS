@@ -146,12 +146,10 @@ def create_list(self, nodes):
 
 ***
 ## Review
-> [TODO]()
+> [The Must-Know Clean Code Principles](https://medium.com/swlh/the-must-know-clean-code-principles-1371a14a2e75)
 
 ### 概述
-TODO
-
-
+描述了一些常用的代码简洁的常用规则
 
 
 ***
