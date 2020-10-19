@@ -35,8 +35,6 @@
 ```python
 
 # Definition for singly-linked list.
-
-# Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -82,14 +80,7 @@ TODO
 > [redis RDB](https://time.geekbang.org/column/article/271839)
 
 ### 概述
-1. 内存快照 方式存储
-
-2. COW 方式实现修改的时候依然可以全量获取数据 
-
-    操作系统提供的写时复制技术（Copy-On-Write, COW）
-
-
-![](https://s1.ax1x.com/2020/10/10/0yEcpn.jpg)
+TODO
 
 ***
 ## Share
