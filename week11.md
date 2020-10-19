@@ -28,7 +28,9 @@
 
 ### 分析
 1. 通过位置，而不是通过里面的数值判断。
+
 2. 画出来
+
 ![](https://pic.leetcode-cn.com/00bd1d974b5a2e6d7d4faf0d5baad1c691f4ed8963cb1b7133d1112bad4c5e86-image.png)
 ### 代码
 
