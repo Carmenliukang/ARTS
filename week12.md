@@ -1,6 +1,6 @@
-# ARTS Week 11
->![](http://image.photocnc.com/photocnc/2020-04/15/202004151046469516.Jpeg.w1680.jpg)
->> 桐人现在正要把自己所说的话付诸行动，能够做到这一点，并不是因为桐人很强，而是他愿意接受自己的懦弱，烦恼、痛苦但即便如此依旧继续向前。
+# ARTS Week 12
+>![](https://image.uc.cn/s/wemedia/s/upload/2020/c3aad88339c5233577627dfb7844e0a8.png)
+>> 坚强不是结果，是朝某个目标努力的过程！
 
 
 ***
@@ -66,7 +66,7 @@ class Solution:
 
 
 ### 总结
-链表的问题都可以通过画图的形式展示出来，然后通过多指针，或者递归的方式同步
+链表的问题都可以通过画图的形式展示出来，然后一步一步运行。
 
 
 ***
@@ -82,7 +82,14 @@ TODO
 > [redis RDB](https://time.geekbang.org/column/article/271839)
 
 ### 概述
-TODO
+1. 内存快照 方式存储
+
+2. COW 方式实现修改的时候依然可以全量获取数据 
+
+    操作系统提供的写时复制技术（Copy-On-Write, COW）
+
+
+![](https://s1.ax1x.com/2020/10/10/0yEcpn.jpg)
 
 ***
 ## Share
