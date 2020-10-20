@@ -71,14 +71,13 @@ class Solution:
 
 ***
 ## Review
-> [redis RDB](https://time.geekbang.org/column/article/271839)
+> [How To Become A True Keyboard Warrior (And Stop Using Your Mouse)](https://levelup.gitconnected.com/how-to-become-a-true-keyboard-warrior-and-stop-using-your-mouse-a87cd29c5801)
 
 ### 概述
-TODO
+键盘快速使用方式
 
 ***
 ## Tip
-TODO
 > [redis RDB](https://time.geekbang.org/column/article/271839)
 > [redis 数据同步，主从一致](https://time.geekbang.org/column/article/272852)
 
@@ -139,7 +138,6 @@ c、另外，可以再延伸一下，老师的问题没有提到Redis进程是�
 
 ***
 ## Share
-TODO
 >[ubuntu apt lock err](https://phoenixnap.com/kb/fix-could-not-get-lock-error-ubuntu)
 
 ### 概述
