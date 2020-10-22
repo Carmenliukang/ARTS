@@ -74,7 +74,25 @@ class Solution:
 > [How To Become A True Keyboard Warrior (And Stop Using Your Mouse)](https://levelup.gitconnected.com/how-to-become-a-true-keyboard-warrior-and-stop-using-your-mouse-a87cd29c5801)
 
 ### 概述
-键盘快速使用方式
+推崇使用键盘来提高工作效率。
+
+**文本**
+
+1. Control-Backspace / Control-Delete will eradicate the left/right word without the need to individually backspace each letter.
+2. Shift plus your arrow keys lets you select text with the keyboard, add control in there and you can select whole words. Use shift and Home/End to select a whole line, use them without shift to jump to the end or start of a line. This way you can press Home-Shift-End-Backspace and a whole line is gone in a second.
+3. Control-UpArrow will jump up a Paragraph in many text editors, something that I don’t use much but it’s a little faster than using just the UpArrow.
+4. Control-F allows you to find words, it also allows to quickly jump down to a specific part of a website or long document when you know what you are searching for. Control-H lets you open the same window and replace words / phrases in most pograms.
+5. Control-Home/End allow you to jump to the beginning/end of the document which is very useful if you went back to correct a sentence or something and then want to continue writing at the end of the document.
+
+**browser**
+
+1. Control-T will open a new tab
+2. Control-W will close the current tab.
+3. Control-1 through 8 will cycle through open tabs, control-9 will always jump to the last open tab to the very right.
+4. Control-PageUp/Down will cycle through your open tabs, just PageUp/Down will allow you to scroll the page.
+5. Speaking of scrolling the page: You can scroll down by just pressing the space bar which is easily the most convenient way to scroll down while your other hand is busy…holding the water bottle that you use to hydrate well enough and be more responsible than your peers.
+6. Control-R reloads the page and is a little easier to reach than F5 which does the same thing.
+7. Your URL bar is also your search bar, if you type www.google.com into your search bar to then reach for the mouse, click the already open search bar, then type the word you were actually looking for please just stop doing that.
 
 ***
 ## Tip
