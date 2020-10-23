@@ -187,9 +187,12 @@ FB 提供的基于 HTTP 协议的 RPC 框架调用方式
 
 ***
 ## Share
-TODO
->[linux fork](https://zhuanlan.zhihu.com/p/36872365)
+>[服务治理的宏观视角](https://time.geekbang.org/column/article/144803)
 
 ### 概述
-TODO
+服务治理 
+
+实现了从 硬件 >>> 虚拟 >>> 自动 >>> 自治  的变化
+
+能够快速的找打问题发现的原因，需要在日志、监控、异常信息手机 等快速通过和联系。
 
