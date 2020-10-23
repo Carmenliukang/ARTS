@@ -138,10 +138,52 @@ TODO
 ***
 ## Tip
 TODO
-> [redis RDB](https://time.geekbang.org/column/article/271839)
+> [服务端的业务架构建议](https://time.geekbang.org/column/article/134384)
 
 ### 概述
-TODO
+服务端整体可以分为以下几个模块：
+1. 网络协议
+2. 授权
+3. RPC框架
+4. 单元测试
+
+
+#### 网络协议
+1. HTTP
+
+无状态的 文本传输协议
+
+2. thrift
+
+FB 提供的基于 HTTP 协议的 RPC 框架调用方式
+
+3. protobuf grpc
+
+基于HTTP 2.0 协议，使用字节流方式加快数据传输。
+
+字节流方式对标的是 json/xml/form 等这种文件传输格式
+
+
+4. GraphQL
+
+[为什么没有火起来？](https://www.zhihu.com/question/38596306)
+
+#### 授权
+
+脱离业务
+
+1. Token
+
+2. AK/SK
+
+#### RPC 框架
+
+1. thrift
+2. grpc
+
+
+#### 单元测试
+1. mock 方式测试
 
 ***
 ## Share
