@@ -1,4 +1,4 @@
-# ARTS Week 12
+# ARTS Week 13
 >[![BliudS.jpg](https://s1.ax1x.com/2020/10/27/BliudS.jpg)](https://imgchr.com/i/BliudS)
 >> 未來的旅程是如此遙遠，能見到的光明卻是如此稀少。即使如此——我仍然沒有完全放棄希望。
 
