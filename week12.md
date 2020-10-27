@@ -130,10 +130,18 @@ class Solution:
 
 ***
 ## Review
-> [TODO](TODO)
+> [The 9 Habits of Highly Ineffective Programmers](https://medium.com/better-programming/the-9-habits-of-highly-ineffective-programmers-b6bd817617b0)
 
 ### 概述
-TODO
+1. Bombarding Code With Unnecessary Comments
+2. Writing Very Long Functions
+3. Not Regularly Testing Code
+4. Following the “If It Works, Don’t Touch It” Methodology
+5. Not Using The Resources Available
+6. Failing To Document Changes
+7. Not Using an Intuitive or Specific Naming Convention
+8. Writing Duplicate Code
+9. Hoarding Knowledge
 
 ***
 ## Tip
