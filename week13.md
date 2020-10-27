@@ -83,7 +83,29 @@ class Solution:
 
 
 ### 总结
-对于 这种一段时间的大小 可以使用栈的方式去 快速的形象化 解析问题。同时解决该问题。
+对于 范围大小的问题，可以通过使用栈的方式同步。
+
+***
+## Review
+> [TODO](TODO)
+
+### 概述
+TODO
 
 
+***
+## Tip
+TODO
+> [TODO](TODO)
 
+### 概述
+TODO
+
+
+***
+## Share
+TODO
+> [TODO](TODO)
+
+### 概述
+TODO
