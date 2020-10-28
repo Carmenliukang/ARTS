@@ -95,11 +95,13 @@ TODO
 
 ***
 ## Tip
-TODO
-> [TODO](TODO)
+> [MySQL join 图解](http://wxb.github.io/2016/12/15/MySQL%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8Djoin.html)
+
 
 ### 概述
-TODO
+Mysql join 图片
+
+[![B1Z52F.jpg](https://s1.ax1x.com/2020/10/28/B1Z52F.jpg)](https://imgchr.com/i/B1Z52F)
 
 
 ***
