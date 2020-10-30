@@ -96,17 +96,23 @@ TODO
 ***
 ## Tip
 > [MySQL join 图解](http://wxb.github.io/2016/12/15/MySQL%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8Djoin.html)
+> [mysql index leng limit](https://stackoverflow.com/questions/15157227/mysql-varchar-index-length)
 
 
 ### 概述
+
+#### Mysql join
 Mysql join 图片
 
 [![B1Z52F.jpg](https://s1.ax1x.com/2020/10/28/B1Z52F.jpg)](https://imgchr.com/i/B1Z52F)
 
 
+#### MySQL index limit
+解释了MySQL index 为什么有 str 255 leng 的长度限制，这里可以对 json/text 格式进行 255 长度的字段索引，提高效率
+
+
 ***
 ## Share
-TODO
 > [TODO](TODO)
 
 ### 概述
