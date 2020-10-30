@@ -87,12 +87,22 @@ class Solution:
 
 ***
 ## Review
-> [TODO](TODO)
+>![](https://miro.medium.com/max/700/1*mSE6ialQ-9TcGUz5ts_FMA.png)
+> [An Efficient Git Branching Strategy Every Developer Should Know](https://medium.com/better-programming/efficient-git-branching-strategy-every-developer-should-know-f1034b1ba041)
 
 ### 概述
-TODO
+常规的开发流程
+
+![](https://miro.medium.com/max/700/1*eZMKRu5BrdTSRhr-JqwyVw.jpeg)
 
 
+1. You can have feature testing from the QA branch and regression from a stable develop branch post-merging of all the features that are planned in the current release.
+2. develop would always be stable and any developer can cut their feature branch at any point in time.
+3. You won’t be spamming the commit history of the develop branch.
+4. If QA faces issues with any feature branch, then you might fix it and push without reverting if that feature is independent of others.
+5. Hotfix: In case of any prod issue, cut a branch from master, fix it, and release.
+
+![](https://miro.medium.com/max/700/1*XV7ACDj6_GSCRh1nFSa73A.jpeg)
 ***
 ## Tip
 > [MySQL join 图解](http://wxb.github.io/2016/12/15/MySQL%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8Djoin.html)
