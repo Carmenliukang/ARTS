@@ -88,7 +88,7 @@ class Solution:
 ***
 ## Review
 >![](https://miro.medium.com/max/700/1*mSE6ialQ-9TcGUz5ts_FMA.png)
-> [An Efficient Git Branching Strategy Every Developer Should Know](https://medium.com/better-programming/efficient-git-branching-strategy-every-developer-should-know-f1034b1ba041)
+>> [An Efficient Git Branching Strategy Every Developer Should Know](https://medium.com/better-programming/efficient-git-branching-strategy-every-developer-should-know-f1034b1ba041)
 
 ### 概述
 常规的开发流程
