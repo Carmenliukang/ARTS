@@ -24,7 +24,6 @@
 
 ```python
 
-
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):
@@ -61,7 +60,6 @@ class Solution:
         # 左右链表拼接
         left.next = right_start.next
         return left_start.next
-
 
 ```
 
