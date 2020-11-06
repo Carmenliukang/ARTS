@@ -125,7 +125,9 @@ class Solution:
 >[因为 lock 导致的进程陷入假死状态](https://github.com/Carmenliukang/ARTS/blob/master/week14.md#share)
 
 ### 概述
-**lock** ![java 锁机制与优化](https://blog.csdn.net/SumResort_LChaowei/article/details/72857921)
+**lock** 
+
+[java 锁机制与优化](https://blog.csdn.net/SumResort_LChaowei/article/details/72857921)
 
 使用 celery crontab ，增加 lock & timeout ，但是中间有一个 sql 因为没有索引，执行过慢，导致 其他定时任务阻塞的情况。这种情况比较难以判断。
 
