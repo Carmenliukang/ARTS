@@ -68,10 +68,15 @@ class Solution:
 
 ***
 ## Review
->[](todo)
+>[Certainty Masters: Probability models — Part 1: Understanding models](https://javierpardo.medium.com/certainty-wizards-probability-models-part-1-understanding-models-d70511603c4c)
 
 ### 概述
-todo
+
+1. The first step to create our own model is to define a **sample space** 
+[![Bhp7BF.png](https://s1.ax1x.com/2020/11/06/Bhp7BF.png)](https://imgchr.com/i/Bhp7BF)
+
+2. create a **probability law**
+[![Bh9CHe.png](https://s1.ax1x.com/2020/11/06/Bh9CHe.png)](https://imgchr.com/i/Bh9CHe)
 
 
 ***
