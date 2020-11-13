@@ -101,23 +101,61 @@ class Solution:
 
 ***
 ## Review
->[todo]()
+>[![DSrnLF.png](https://s3.ax1x.com/2020/11/13/DSrnLF.png)](https://imgchr.com/i/DSrnLF)
+>[Don’t Use Database Generated IDs in Domain Entitie](https://medium.com/swlh/dont-use-database-generated-ids-d703d35e9cc4)
 
 ### 概述
-todo 
+**Generate your IDs at the application level. Not at the persistence level.** 
+
+(please note that entity ID is not necessarily a database primary key)
+
+
+example:
+[![DSraee.png](https://s3.ax1x.com/2020/11/13/DSraee.png)](https://imgchr.com/i/DSraee)
+
+example1：
+[![DSrBFA.png](https://s3.ax1x.com/2020/11/13/DSrBFA.png)](https://imgchr.com/i/DSrBFA)
+
+optimize:
+[![DSrcy8.png](https://s3.ax1x.com/2020/11/13/DSrcy8.png)](https://imgchr.com/i/DSrcy8)
+
+
+link:
+[When and where to determine the ID of en entity by Matthias Noback](https://matthiasnoback.nl/2018/05/when-and-where-to-determine-the-id-of-an-entity/)
+
 
 
 ***
 ## Tip
->[todo]()
+>[心性：架构师的修炼之道](https://time.geekbang.org/column/article/166014)
 
 ### 概述
-todo
+**架构修炼之道**
+
+心性上:
+1. 认同他人能力
+2. 保持好奇心和韧性
+3. 学会否定自己
+
+技能:
+1. 理解需求的能力
+2. 读代码的能力
+3. 抽象系统的能力
 
 
 ***
 ## Share
->[todo]()
+>[celert 中文手册](https://www.celerycn.io/)
 
 ### 概述
-todo  
+**celery 中文手册**
+
+celery 是依靠 Redis、RabbitMQ 作为中间件 的分布式 消息队列工具
+
+Celery 通过消息机制进行通信，通常使用中间人（Broker）作为客户端和职程（Worker）调节。启动一个任务，客户端向消息队列发送一条消息，然后中间人（Broker）将消息传递给一个职程（Worker），最后由职程（Worker）进行执行中间人（Broker）分配的任务。
+
+
+
+
+
+ 
