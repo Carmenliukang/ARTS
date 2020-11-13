@@ -102,7 +102,7 @@ class Solution:
 ***
 ## Review
 >[![DSrnLF.png](https://s3.ax1x.com/2020/11/13/DSrnLF.png)](https://imgchr.com/i/DSrnLF)
->[Don’t Use Database Generated IDs in Domain Entitie](https://medium.com/swlh/dont-use-database-generated-ids-d703d35e9cc4)
+>>[Don’t Use Database Generated IDs in Domain Entitie](https://medium.com/swlh/dont-use-database-generated-ids-d703d35e9cc4)
 
 ### 概述
 **Generate your IDs at the application level. Not at the persistence level.** 
@@ -111,12 +111,15 @@ class Solution:
 
 
 example:
+
 [![DSraee.png](https://s3.ax1x.com/2020/11/13/DSraee.png)](https://imgchr.com/i/DSraee)
 
 example1：
+
 [![DSrBFA.png](https://s3.ax1x.com/2020/11/13/DSrBFA.png)](https://imgchr.com/i/DSrBFA)
 
-optimize:
+optimize: 
+
 [![DSrcy8.png](https://s3.ax1x.com/2020/11/13/DSrcy8.png)](https://imgchr.com/i/DSrcy8)
 
 
