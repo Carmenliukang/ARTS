@@ -148,7 +148,7 @@ link:
 
 ***
 ## Share
->[celert 中文手册](https://www.celerycn.io/)
+>[celery 中文手册](https://www.celerycn.io/)
 
 ### 概述
 **celery 中文手册**
