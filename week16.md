@@ -1,25 +1,65 @@
-# ARTS Week 16
+# ARTS Week 
 >[todo](todo)
 >> todo
 
 ***
+## Algoithm
 >[todo](todo)
 
 todo
 
 ***
+## Review
 >[todo]()
 
 todo 
 
 
 ***
+## Tip
 >[todo]()
 
 todo
 
 
 ***
+## Share
 >[todo]()
 
-todo  
+```python
+
+class Node(object):
+    def __init__(self, val=None):
+        self.val = val
+        self.children = []  # 这里必须是一个有序，所以选择的是数组
+
+
+class Tree(object):
+    # 创建N叉树
+    def create(self, val, data):
+        # 递归调用创建N叉树
+        root = Node(val=val)
+        for i in data.get(val, []):
+            node = self.create(val=i, data=data)
+            root.children.append(node)
+        return root
+
+    def show(self, root):
+        for i in root.children:
+            self.show(i)
+
+
+if __name__ == '__main__':
+    node = []
+    data = {
+        1: [2, 3],
+        2: [6, 7],
+        7: [5]
+    }
+
+    tree = Tree()
+    root = tree.create(1, data)
+
+    tree.show(root)
+
+```  
