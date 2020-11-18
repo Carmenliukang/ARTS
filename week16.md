@@ -10,9 +10,10 @@ todo
 
 ***
 ## Review
->[todo]()
+>[When DRY Doesn’t Work, Go WET](https://medium.com/better-programming/when-dry-doesnt-work-go-wet-6befda0444bf)
 
-todo 
+### 概述
+这里主要是使用了相关的状态同步
 
 
 ***
@@ -24,8 +25,10 @@ todo
 
 ***
 ## Share
->[todo]()
+>[N叉树构建](https://github.com/Carmenliukang/ARTS/blob/master/week16.md#share)
 
+
+### 概述
 ```python
 
 class Node(object):
