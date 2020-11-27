@@ -84,6 +84,7 @@ class Solution(object):
 ***
 ## Tip
 >[实战：“画图程序” 的整体架构](https://time.geekbang.org/column/article/172004)
+
 >[全局性功能的架构设计](https://time.geekbang.org/column/article/173619)
 
 ### 概述
@@ -105,6 +106,7 @@ class Solution(object):
 ***
 ## Share
 >[树结构常用算法总结](https://github.com/Carmenliukang/ARTS/blob/master/week17.md#share)
+
 >[leetcode 树](https://leetcode-cn.com/tag/tree/)
 
 ### 概述
