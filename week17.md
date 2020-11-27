@@ -41,6 +41,7 @@ class TreeNode:
 
 class Solution(object):
     def rightSideView(self, root):
+        # 使用栈的方式进行数据的整体的遍历，实现了层序的遍历
         rightmost_value_at_depth = dict()  # 深度为索引，存放节点的值
         max_depth = -1
 
@@ -70,22 +71,40 @@ class Solution(object):
 ### 概述
 “Microservice is a tightly scoped, strongly encapsulated, loosely coupled, independently deployable, and independently scalable application component.”
 
-p
+* Each microservice can be deployed, upgraded, scaled, maintained, and restarted independent of sibling services in the application.
+* Agile development & agile deployment with an autonomous cross-functional team.
+* Flexibility in using technologies and scalability.
+
+[![DrSifP.png](https://s3.ax1x.com/2020/11/27/DrSifP.png)](https://imgchr.com/i/DrSifP)
+
+### API Gateway
+[![Dr99RP.png](https://s3.ax1x.com/2020/11/27/Dr99RP.png)](https://imgchr.com/i/Dr99RP)
+
 
 ***
 ## Tip
->[todo]()
-
+>[实战：“画图程序” 的整体架构](https://time.geekbang.org/column/article/172004)
+>[全局性功能的架构设计](https://time.geekbang.org/column/article/173619)
 
 ### 概述
-todo
+
+#### 系统侵入计算方式
+[画图代码](https://github.com/qiniu/qpaint/tree/v44)
+
+计算方式：
+
+比如某个接口方法被 N 个周边模块引用，那么每个周边模块分担的伤害值为 1/N。
+
+
+#### 全局性功能设计
+**任何功能都是可以正交分解的，即使我目前还没有找到方法。**
+
+**业务分解就是最小化的核心系统，加上多个正交分解的周边系统。核心系统一定要最小化，要稳定。坚持不要往核心系统中增加新功能，这样你的业务架构就不可能有臭味**
 
 
 ***
 ## Share
 >[todo]()
-
-
 
 ### 概述
 todo  
