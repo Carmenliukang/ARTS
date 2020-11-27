@@ -104,7 +104,53 @@ class Solution(object):
 
 ***
 ## Share
->[todo]()
+>[树结构常用算法总结](https://github.com/Carmenliukang/ARTS/blob/master/week17.md#share)
+>[leetcode 树](https://leetcode-cn.com/tag/tree/)
 
 ### 概述
-todo  
+**二叉树常用解法的总结**
+
+#### 树
+
+树是一种抽象数据类型（ADT）或是实现这种抽象数据类型的数据结构，用来模拟具有树状结构性质的数据集合。它是由 n(n>0)n(n>0) 个有限节点组成一个具有层次关系的集合。
+
+[![Drk7RA.png](https://s3.ax1x.com/2020/11/27/Drk7RA.png)](https://imgchr.com/i/Drk7RA)
+
+把它叫做「树」是因为它看起来像一棵倒挂的树，也就是说它是根朝上，而叶朝下的。
+
+
+它具有以下的特点：
+
+* 每个节点都只有有限个子节点或无子节点；
+* 没有父节点的节点称为根节点；
+* 每一个非根节点有且只有一个父节点；
+* 除了根节点外，每个子节点可以分为多个不相交的子树；
+* 树里面没有环路。
+
+#### 递归
+递归方式总结
+1. 确定终止条件
+2. 确定每一个节点可能的情况
+3. 确定递归的顺序
+
+```python
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+class Solution(object):
+    def recursive(self, root):
+        # 递归方式同步，大部分的题目
+        
+        # root.val 节点的判断
+        
+        self.recursive(root.left)
+        self.recursive(root.right)
+       
+```
+
+  
