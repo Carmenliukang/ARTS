@@ -1,6 +1,6 @@
-# ARTS Week 
+# ARTS Week 19
 >[![DoUaXq.jpg](https://s3.ax1x.com/2020/12/02/DoUaXq.jpg)](https://imgchr.com/i/DoUaXq)
->> todo
+>> 静水流深，沧笙踏歌
 
 ***
 ## Algoithm
@@ -103,11 +103,28 @@ class Solution:
     3. 后序
 
 ## Review
->[todo]()
+>[XGBoost Algorithm: Long May She Reign!](https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d)
 
 ### 概述
-todo 
+>[github xgboost](https://github.com/dmlc/xgboost/)
 
+>![DxLw34.jpg](https://s3.ax1x.com/2020/12/07/DxLw34.jpg)
+
+
+**XGBoost** is a decision-tree-based ensemble Machine Learning algorithm that uses a [gradient boosting](https://en.wikipedia.org/wiki/Gradient_boosting) framework.
+
+1. A wide range of applications: Can be used to solve regression, classification, ranking, and user-defined prediction problems.
+2. Portability: Runs smoothly on Windows, Linux, and OS X.
+3. Languages: Supports all major programming languages including C++, Python, R, Java, Scala, and Julia.
+4. Cloud Integration: Supports AWS, Azure, and Yarn clusters and works well with Flink, Spark, and other ecosystems.
+
+#### XGBoots 
+1. Decision Tree: Every hiring manager has a set of criteria such as education level, number of years of experience, interview performance. A decision tree is analogous to a hiring manager interviewing candidates based on his or her own criteria.
+2. Bagging: Now imagine instead of a single interviewer, now there is an interview panel where each interviewer has a vote. Bagging or bootstrap aggregating involves combining inputs from all interviewers for the final decision through a democratic voting process.
+3. Random Forest: It is a bagging-based algorithm with a key difference wherein only a subset of features is selected at random. In other words, every interviewer will only test the interviewee on certain randomly selected qualifications (e.g. a technical interview for testing programming skills and a behavioral interview for evaluating non-technical skills).
+4. Boosting: This is an alternative approach where each interviewer alters the evaluation criteria based on feedback from the previous interviewer. This ‘boosts’ the efficiency of the interview process by deploying a more dynamic evaluation process.
+5. Gradient Boosting: A special case of boosting where errors are minimized by gradient descent algorithm e.g. the strategy consulting firms leverage by using case interviews to weed out less qualified candidates.
+6. XGBoost: Think of XGBoost as gradient boosting on ‘steroids’ (well it is called ‘Extreme Gradient Boosting’ for a reason!). It is a perfect combination of software and hardware optimization techniques to yield superior results using less computing resources in the shortest amount of time.
 
 ***
 ## Tip
@@ -144,7 +161,150 @@ todo
 
 ***
 ## Share
->[todo]()
+>[树类型题目总结](https://github.com/Carmenliukang/ARTS/blob/master/week19.md#share)
 
 ### 概述
-todo  
+总结相关的类型题目
+
+#### 双层DFS
+>[二叉树的完全性验证](https://leetcode-cn.com/problems/check-completeness-of-a-binary-tree)
+>[二叉树的最大宽度](https://leetcode-cn.com/problems/maximum-width-of-binary-tree)
+>[检查子树](https://leetcode-cn.com/problems/check-subtree-lcci)
+
+##### 二叉树的完全性验证
+>[二叉树的完全性验证](https://leetcode-cn.com/problems/check-completeness-of-a-binary-tree)
+
+```python
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
+class Solution:
+    def isCompleteTree(self, root: TreeNode) -> bool:
+        nodes = [(root, 1)]
+        i = 0
+        # 使用二叉树的层序遍历进行相关节点的校验
+        while i < len(nodes):
+            node, v = nodes[i]
+            i += 1
+            if node:
+                nodes.append((node.left, 2 * v))
+                nodes.append((node.right, 2 * v + 1))
+
+        return nodes[-1][1] == len(nodes)
+```
+
+##### 二叉树的最大宽度
+```python
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    def __init__(self):
+        self.ans = 0
+        self.left = {}
+
+    def widthOfBinaryTree(self, root: TreeNode) -> int:
+        self.dfs(root)
+        return self.ans
+
+    def dfs(self, root, depth=0, pos=0):
+        if not root:
+            return
+
+        # 记录每一层的最左边的数据大小，然后将其
+        self.left.setdefault(depth, pos)
+        self.ans = max(self.ans, pos - self.left[depth] + 1)
+        self.dfs(root.left, depth + 1, 2 * pos)
+        self.dfs(root.right, depth + 1, 2 * pos + 1)
+```
+
+##### 相同的树
+>[相同的树](https://leetcode-cn.com/problems/same-tree)
+```python
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
+        if not p and not q:
+            return True
+
+        if not p or not q:
+            return False
+        # 这里使用的是 前序遍历，因为是相同的树，所以 是相同的 左右子树，如果是对称，那么就需要同步其他的状态了。
+        return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+
+
+```
+
+##### 检查子树
+>[检查子树](https://leetcode-cn.com/problems/check-subtree-lcci)
+
+```python
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
+class Solution:
+    """
+    判断t2是否为t1的子树，如果根节点相同，那么有必要开始判断从这个根节点开始这两棵树是否相同。若相同了，说明已经找到，结束算法；如果不同，继续从t1的左右子树寻找t2，只要在一边找到就可以了。
+    根节点相同但仍然是不同的树，如 t1 = [2,2,3], t2 = [2]
+
+    如果根节点不相同，那么继续从t1的左右子树寻找t2，只要在一边找到就可以了
+
+    递归出口：空树认为是任何树的子树；当t1为空而t2不为空时，说明t1不包含t2。
+
+    作者：zui-weng-jiu-xian
+    链接：https://leetcode-cn.com/problems/check-subtree-lcci/solution/jian-cha-zi-shu-jin-100dai-ma-jian-ji-zhu-shi-xian/
+    来源：力扣（LeetCode）
+    著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+    """
+
+    def checkSubTree(self, t1: TreeNode, t2: TreeNode) -> bool:
+        if not t2:
+            return True
+        if not t1:
+            return False
+        # 两层 dfs 查询，然后同步
+        return self._dfs(t1, t2) or self.checkSubTree(t1.left, t2) or self.checkSubTree(t1.right, t2)
+
+    def _dfs(self, t1, t2):
+        # 判断其两个树是否相同
+        if not t2:
+            return True
+        if not t1:
+            return False
+
+        if t1.val != t2.val:
+            return False
+
+        return self._dfs(t1.left, t2.left) and self._dfs(t1.right, t2.right)
+
+```
+
+##### 总结
+可以将每一个数值都设置成可固化的数值，然后进行相关的计算
+
