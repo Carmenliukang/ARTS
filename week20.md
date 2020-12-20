@@ -93,10 +93,27 @@ class Solution:
 
 ***
 ## Review
->[todo]()
+>[Software Architecture: The Most Important Architectural Patterns You Need to Know](https://levelup.gitconnected.com/software-architecture-the-important-architectural-patterns-you-need-to-know-a1f5ea7e4e3d)
 
 ### 概述
-todo 
+本文主要讲述了一些事例：
+1. Layered Architecture
+2. Pipe and Filter
+3. Client Server
+4. Model View Controller
+5. Event Driven Architecture
+6. Microservices Architecture
+
+
+#### Layered Architecture
+大部分的分层模式可以分为：
+1. presentation
+2. business 
+3. persistence 
+4. database.
+
+![](https://miro.medium.com/max/700/1*Ek-VfFxTMieiWXjQVur-iA.png)
+
 
 
 ***
