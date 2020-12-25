@@ -77,7 +77,7 @@ class Solution:
 
 ## Review
 
-> [todo](todo)
+> [Software developers might be obsolete by 2030](Software developers might be obsolete by 2030)
 
 ### 概述
 
