@@ -18,12 +18,13 @@
         2
        / \
       1   3
-返回：
 
-[
-   [2,1,3],
-   [2,3,1]
-]
+返回：
+    
+    [
+       [2,1,3],
+       [2,3,1]
+    ]
 
 #### 分析
 >[引用题解](https://leetcode-cn.com/problems/bst-sequences-lcci/solution/15xing-dai-ma-by-suibianfahui/)
