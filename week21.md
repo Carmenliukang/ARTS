@@ -77,7 +77,7 @@ class Solution:
 
 ## Review
 
-> [Software developers might be obsolete by 2030](Software developers might be obsolete by 2030)
+> [Software developers might be obsolete by 2030](https://towardsdatascience.com/software-developers-might-be-obsolete-by-2030-cb5ddbfec291)
 
 ### 概述
 
