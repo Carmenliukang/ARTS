@@ -71,6 +71,7 @@ class Solution:
 ### 总结
 
 1. 忽略左右子树，将其看成一个单点去思考设计代码。
+2. 递归的方式完成相关的数据同步
 
 ***
 
@@ -96,7 +97,7 @@ todo
 
 ## Share
 
-> [思考未来同步加油](https://github.com/Carmenliukang/ARTS/blob/master/week23.md#share)
+> [保持情绪的稳定](https://github.com/Carmenliukang/ARTS/blob/master/week23.md#share)
 
 ### 概述
 
