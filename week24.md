@@ -1,6 +1,6 @@
 # ARTS Week 24
 
-> [![r79Xwj.jpg](https://s3.ax1x.com/2020/12/28/r79Xwj.jpg)](https://imgchr.com/i/r79Xwj)
+> [![s3ZUeA.jpg](https://s3.ax1x.com/2021/01/11/s3ZUeA.jpg)](https://imgchr.com/i/s3ZUeA)
 >> 如果不竭尽全力到最后一刻的话，是无法取胜的。 --《刀剑神域》
 
 ***
@@ -63,7 +63,8 @@ class Solution:
 
 ### 总结
 
-1. 将其抽象成基本的方式
+1. 将其抽象成 F(N) 只与 F(N-1) 和 F(N-2) 这些有关系，具体的 F(N-1) 与 F(N-2) 这些都已经是确定的结果。
+2. 这里高度抽象后，就可以快速完成其相关的数据
 
 ***
 
