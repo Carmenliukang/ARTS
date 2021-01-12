@@ -77,21 +77,25 @@ class Solution:
 
 ## Review
 
-> [todo](todo)
-
-### 概述
-
-todo
+> [孙子兵法解读](https://time.geekbang.org/column/article/116087)
+>
+> [架构课程部分解答](https://time.geekbang.org/column/article/112064)
 
 ***
 
 ## Tip
 
-> [todo](todo)
+> [Libra 货币](https://time.geekbang.org/column/article/102973)
+>
+> [Economics and the Reserve](https://www.diem.com/en-us/economics-and-the-reserve/#overview)
 
 ### 概述
 
-todo
+> ![](https://static001.geekbang.org/resource/image/f6/36/f609ac75b5fbff59d1cdef49990c6736.png)
+
+#### 未来的趋势
+
+计算机 => 互联网 => Libra 币
 
 ***
 
@@ -113,6 +117,8 @@ todo
 
 #### 总结
 
+> [![sJpTk8.png](https://s3.ax1x.com/2021/01/12/sJpTk8.png)](https://imgchr.com/i/sJpTk8)
+
 1. 明确 base case -> 明确「状态」-> 明确「选择」 -> 定义 dp 数组/函数的含义。
 
 2. 框架设定：
@@ -128,25 +134,29 @@ for 状态1 in 状态1的所有取值：
 ```
 
 #### 示例
+
 > [面试题 08.01. 三步问题](https://leetcode-cn.com/problems/three-steps-problem-lcci/submissions/)
 
 ##### 分析
+
 三步问题。有个小孩正在上楼梯，楼梯有n阶台阶，小孩一次可以上1阶、2阶或3阶。实现一种方法，计算小孩有多少种上楼梯的方式。结果可能很大，你需要对结果模1000000007。
 
 ##### **base case**
-F(0) = 0
-F(1) = 0
-F(2) = 0
+
+F(0) = 0 F(1) = 0 F(2) = 0
 
 ##### **状态**
+
 1. 到N距离为1
 2. 到N距离为2
 3. 到N距离为3
 
 ##### **选择**
+
 F(N) = F(N-1)+F(N-2)+F(N-3)
 
 ##### **具体的算法**
+
 ```python
 class Solution:
     def waysToStep(self, n: int) -> int:
