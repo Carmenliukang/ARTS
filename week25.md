@@ -45,7 +45,7 @@ F(M,N)=min(F(M-1,N),F(M,N-1))+NUM(M,N)
 
 ```python
 class Solution:
-    def minPathSum(self, grid: List[List[int]]) -> int:
+    def minPathSum(self, grid: list[list[int]]) -> int:
         if not grid or not grid[0]:
             return 0
 
@@ -104,4 +104,4 @@ todo
 
 ### 概述
 
-todo
+每日不断的反思自我
