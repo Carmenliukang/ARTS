@@ -78,11 +78,21 @@ class Solution:
 
 ## Review
 
-> [todo](todo)
+> [链表底层解析](https://github.com/Carmenliukang/ARTS/blob/master/week25.md#review)
 
 ### 概述
 
-todo
+**链表** 与 **数组** 的存储结构
+![](https://static001.geekbang.org/resource/image/d5/cd/d5d5bee4be28326ba3c28373808a62cd.jpg))
+
+#### 链表
+
+1. 单链表
+   ![](https://static001.geekbang.org/resource/image/b9/eb/b93e7ade9bb927baad1348d9a806ddeb.jpg)
+2. 双向链表
+   ![](https://static001.geekbang.org/resource/image/cb/0b/cbc8ab20276e2f9312030c313a9ef70b.jpg)
+3. 循环链表
+   ![](https://static001.geekbang.org/resource/image/86/55/86cb7dc331ea958b0a108b911f38d155.jpg)
 
 ***
 
@@ -100,8 +110,18 @@ todo
 
 ## Share
 
-> [反思](https://github.com/Carmenliukang/ARTS/blob/master/week25.md#share)
+> [反刍思维](https://www.zhihu.com/question/286764525/answer/1398657073)
 
 ### 概述
 
-每日不断的反思自我
+**反刍思维**：
+
+是指经历了负性事件后，个体对事件、自身消极情绪状态及其可能产生的原因和后果进行反复、被动的思考。
+
+### 改变
+
+1. 改变视角： 旁观者清，当局者迷。
+2. 分散注意力
+3. 情绪重构
+   
+
