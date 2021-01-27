@@ -96,7 +96,7 @@ todo
 
 ## Share
 
-> [todo](todo)
+> [DP简单总结](https://github.com/Carmenliukang/ARTS/blob/master/week26.md#share)
 
 ### 概述
 
