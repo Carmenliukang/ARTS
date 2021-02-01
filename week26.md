@@ -1,6 +1,6 @@
 # ARTS Week 26
 
-> [![s7OOHO.jpg](https://s3.ax1x.com/2021/01/23/s7OOHO.jpg)](https://imgchr.com/i/s7OOHO)
+> ![](https://github.com/Carmenliukang/ARTS/blob/master/image/26/26.jpg)
 >> 静水流深，沧笙踏歌
 
 ***
@@ -76,28 +76,133 @@ class Solution:
 
 ## Review
 
-> [todo](todo)
+> [切片集群：数据增多了，是该加内存还是加实例？](https://time.geekbang.org/column/article/276545)
 
 ### 概述
 
-todo
+方向分为两种：
+
+1. 纵向扩展
+2. 横向扩展
+
+![](https://github.com/Carmenliukang/ARTS/blob/master/image/26/redis-扩展.jpg)
+
 
 ***
 
 ## Tip
 
-> [todo](todo)
+> [coder2gwy](https://github.com/coder2gwy/coder2gwy)
 
 ### 概述
 
-todo
+程序员上岸经历资料
 
 ***
 
 ## Share
 
-> [DP简单总结](https://github.com/Carmenliukang/ARTS/blob/master/week26.md#share)
+> [回溯算法总结](https://github.com/Carmenliukang/ARTS/blob/master/week26.md#share)
 
 ### 概述
 
-todo
+*解决一个回溯问题，实际上就是一个决策树的遍历过程*
+
+1. 路径：也就是已经做出的选择。
+2. 选择列表：也就是你当前可以做的选择。
+3. 结束条件：也就是到达决策树底层，无法再做选择的条件。
+
+#### 框架
+
+```
+result = []
+def backtrack(路径, 选择列表):
+    if 满足结束条件:
+        result.add(路径)
+        return
+    
+    for 选择 in 选择列表:
+        做选择
+        backtrack(路径, 选择列表)
+        撤销选择
+```
+
+其核心就是 for 循环里面的递归，在递归调用之前「做选择」，在递归调用之后「撤销选择」
+
+#### 例子
+
+##### N皇后
+
+这个问题很经典了，简单解释一下：给你一个 N×N 的棋盘，让你放置 N 个皇后，使得它们不能互相攻击。
+
+PS：皇后可以攻击同一行、同一列、左上左下右上右下四个方向的任意单位。
+
+```java
+
+vector<vector<string>> res;
+
+/* 输入棋盘边长 n，返回所有合法的放置 */
+vector<vector<string>> solveNQueens(int n) {
+    // '.' 表示空，'Q' 表示皇后，初始化空棋盘。
+    vector<string> board(n, string(n, '.'));
+    backtrack(board, 0);
+    return res;
+}
+
+// 路径：board 中小于 row 的那些行都已经成功放置了皇后
+// 选择列表：第 row 行的所有列都是放置皇后的选择
+// 结束条件：row 超过 board 的最后一行
+void backtrack(vector<string>& board, int row) {
+    // 触发结束条件
+    if (row == board.size()) {
+        res.push_back(board);
+        return;
+    }
+    
+    int n = board[row].size();
+    for (int col = 0; col < n; col++) {
+        // 排除不合法选择
+        if (!isValid(board, row, col)) 
+            continue;
+        // 做选择
+        board[row][col] = 'Q';
+        // 进入下一行决策
+        backtrack(board, row + 1);
+        // 撤销选择
+        board[row][col] = '.';
+    }
+}
+
+/* 是否可以在 board[row][col] 放置皇后？ */
+bool isValid(vector<string>& board, int row, int col) {
+    int n = board.size();
+    // 检查列是否有皇后互相冲突
+    for (int i = 0; i < n; i++) {
+        if (board[i][col] == 'Q')
+            return false;
+    }
+    // 检查右上方是否有皇后互相冲突
+    for (int i = row - 1, j = col + 1; 
+            i >= 0 && j < n; i--, j++) {
+        if (board[i][j] == 'Q')
+            return false;
+    }
+    // 检查左上方是否有皇后互相冲突
+    for (int i = row - 1, j = col - 1;
+            i >= 0 && j >= 0; i--, j--) {
+        if (board[i][j] == 'Q')
+            return false;
+    }
+    return true;
+}
+
+```
+
+![](https://github.com/labuladong/fucking-algorithm/blob/master/pictures/backtracking/7.jpg)
+
+
+
+
+
+
+
