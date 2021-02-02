@@ -17,7 +17,7 @@
 
 示例:
 
-    输入: "aab"
+    输入:"aab"
     输出:
     [
       ["aa","b"],
@@ -84,8 +84,10 @@ todo
 
 ## Share
 
-> [todo](todo)
+> [反思总结](https://github.com/Carmenliukang/ARTS/blob/master/week27.md#share)
 
 ### 概述
+焦虑解决不了任何问题，只会让问题更加的严重，所以接纳自己，同时每一个小事情都做好。这样后面的路会越来越宽广。
 
-todo
+
+
