@@ -1,6 +1,6 @@
 # ARTS Week 27
 
-> ![](https://github.com/Carmenliukang/ARTS/blob/master/image/27/27.jpg)
+> ![](https://github.com/Carmenliukang/ARTS/blob/master/image/27/1.jpg)
 >> 从零开始
 
 ***
@@ -64,11 +64,23 @@ class Solution:
 
 ## Review
 
-> [todo](todo)
+> [“万金油”的String，为什么不好用了？](https://time.geekbang.org/column/article/279649)
 
 ### 概述
 
-todo
+string 是redis 支持的一种存储的结构
+
+缺点：
+
+1. 就是它保存数据时所消耗的内存空间较多。
+
+#### 简单动态字符串（Simple Dynamic String，SDS）结构体
+
+![](https://github.com/Carmenliukang/ARTS/blob/master/image/27/2.jpg)
+
+* buf：字节数组，保存实际数据。为了表示字节数组的结束，Redis 会自动在数组最后加一个“\0”，这就会额外占用 1 个字节的开销。
+* len：占 4 个字节，表示 buf 的已用长度。
+* alloc：也占个 4 字节，表示 buf 的实际分配长度，一般大于 len。
 
 ***
 
