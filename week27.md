@@ -86,17 +86,44 @@ string 是redis 支持的一种存储的结构
 
 ## Tip
 
-> [todo](todo)
+> [unittest --- 单元测试框架¶](https://docs.python.org/zh-cn/3/library/unittest.html)
 
 ### 概述
 
-todo
+unittest --- python 是python
+
+### 基本实例
+
+```python
+import unittest
+
+
+class TestStringMethods(unittest.TestCase):
+
+    def test_upper(self):
+        self.assertEqual('foo'.upper(), 'FOO')
+
+    def test_isupper(self):
+        self.assertTrue('FOO'.isupper())
+        self.assertFalse('Foo'.isupper())
+
+    def test_split(self):
+        s = 'hello world'
+        self.assertEqual(s.split(), ['hello', 'world'])
+        # check that s.split fails when the separator is not a string
+        with self.assertRaises(TypeError):
+            s.split(2)
+
+
+if __name__ == '__main__':
+    unittest.main()
+```
 
 ***
 
 ## Share
 
-> [35 岁的你想告诉 28 岁的我什么人生道理？](https://www.zhihu.com/question/345832687/answer/858740088)
+> [知乎-引用-35 岁的你想告诉 28 岁的我什么人生道理？](https://www.zhihu.com/question/345832687/answer/858740088)
 
 ### 概述
 
@@ -104,7 +131,8 @@ todo
 
 1. 谈恋爱跟结婚完全两码事，你不甘心的话，甚至可以分开进行(自己注意安全)，反正到了35岁你就想通了。
 2. 多跟父母交流，你这个年纪了，要考虑和父母保持合适距离。不要住太远也不要太近，好的家庭关系能显著提高人生质量。
-   3.第一条你还不明白的话，普通人结婚就是为了生孩子和养孩子，挑选对象要以这件事为考虑标准，不然你到了三十几就会活得像个sb，人生毁了一半。（骂我的几乎都集中在这一条，坚持不改！说不想结婚和只想丁克的都不是普通人！！！）——————你确定继续看下去？—————
+3.
+第一条你还不明白的话，普通人结婚就是为了生孩子和养孩子，挑选对象要以这件事为考虑标准，不然你到了三十几就会活得像个sb，人生毁了一半。（骂我的几乎都集中在这一条，坚持不改！说不想结婚和只想丁克的都不是普通人！！！）——————你确定继续看下去？—————
 4. 男孩，早点买房买车，哪怕是花父母的钱，这是成人生活的门票 。
 5. 除了豪宅，别买任何奢侈品，那是拖垮穷人的毒药。
 6. 对成人世界来说，学历代表一个人的出身背景，过了三十岁，停止在学历上(只说学历，没说知识和技术)的自费投资，自信一点面对自己的出身，看清自己的真实位置，对你在事业上帮助更大 。
