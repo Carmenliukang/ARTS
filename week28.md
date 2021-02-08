@@ -88,11 +88,22 @@ class Solution:
 
 ## Review
 
-> [todo](todo)
+> [Redis-有一亿个keys要统计，应该用哪种集合？](https://time.geekbang.org/column/article/280680)
 
 ### 概述
 
-todo
+常见的统计方式如下：
+
+1. 聚合统计
+2. 排序统计
+3. 二值状态统计
+4. 基数统计
+
+#### 聚合统计
+
+所谓的聚合统计，就是指统计多个集合元素的聚合结果，包括：统计多个集合的共有元素（交集统计）；把两个集合相比，统计其中一个集合独有的元素（差集统计）；统计多个集合的所有元素（并集统计）。
+
+
 
 ***
 
@@ -123,23 +134,19 @@ sudo pacman -S rsync
 
 2. 基本用法
 
-    1. -r
-       递归同步所有文件
+    1. -r 递归同步所有文件
        ```shell
           raync -r source(源目录) destination(目标目录)
        ```
-    2. -a
-       递归同步所有文件，并且包含 元信息
+    2. -a 递归同步所有文件，并且包含 元信息
        ```shell
           raync -a source(源目录) destination(目标目录)
        ```
-    3. -n
-       模拟执行命令的结果
+    3. -n 模拟执行命令的结果
        ```shell
           raync -anv source(源目录) destination(目标目录)
        ```
-    4. --delete
-       另一个目录作为镜像，将不存在这个目录的文件删除
+    4. --delete 另一个目录作为镜像，将不存在这个目录的文件删除
        ```shell
           rsync -av --delete source/ destination
        ```
