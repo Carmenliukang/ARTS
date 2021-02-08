@@ -98,11 +98,60 @@ todo
 
 ## Tip
 
-> [todo](todo)
+> [linux文件实时同步](https://www.cnblogs.com/zzf0305/p/9319962.html)
+>
+> [rsync-详细说明](https://rsync.samba.org/)
 
 ### 概述
 
-todo
+使用 rsync 自动同步文件修改后的文件
+
+1. 安装
+
+```shell
+
+# Debian
+sudo apt-get install rsync
+
+# Red Hat
+sudo yum install rsync
+
+# Arch Linux
+sudo pacman -S rsync
+
+```
+
+2. 基本用法
+
+    1. -r
+       递归同步所有文件
+       ```shell
+          raync -r source(源目录) destination(目标目录)
+       ```
+    2. -a
+       递归同步所有文件，并且包含 元信息
+       ```shell
+          raync -a source(源目录) destination(目标目录)
+       ```
+    3. -n
+       模拟执行命令的结果
+       ```shell
+          raync -anv source(源目录) destination(目标目录)
+       ```
+    4. --delete
+       另一个目录作为镜像，将不存在这个目录的文件删除
+       ```shell
+          rsync -av --delete source/ destination
+       ```
+    5. --exclude
+    6. --include
+
+3. 文件同步协议
+    1. ssh
+    2. rsync
+
+4. 增量备份
+    1. --link-dest
 
 ***
 
