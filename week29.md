@@ -2,6 +2,7 @@
 
 > ![](https://github.com/Carmenliukang/ARTS/blob/master/image/29/1.jpeg)
 >> 他死在一个谁都不知道角落我不想他的骨灰毫无意义。
+
 ***
 
 ## Algoithm
