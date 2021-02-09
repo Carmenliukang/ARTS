@@ -124,12 +124,6 @@ List 是按照元素进入 List 的顺序进行排序的，而 Sorted Set 可以
 
 ![](https://github.com/Carmenliukang/ARTS/blob/master/image/28/3.jpg)
 
-
-
-
-
-
-
 ***
 
 ## Tip
