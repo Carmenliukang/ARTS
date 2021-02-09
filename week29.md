@@ -1,8 +1,7 @@
 # ARTS Week 29
 
-> [todo](todo)
->> todo
-
+> ![](https://github.com/Carmenliukang/ARTS/blob/master/image/29/1.jepg)
+>> 他死在一个谁都不知道角落我不想他的骨灰毫无意义。
 ***
 
 ## Algoithm
