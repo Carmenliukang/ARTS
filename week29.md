@@ -115,7 +115,7 @@ todo
 
 ## Share
 
-> [todo](todo)
+> [0-1背包类型题目总结](https://github.com/Carmenliukang/ARTS/blob/master/week29.md#share)
 
 ### 概述
 
