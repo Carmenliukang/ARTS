@@ -19,7 +19,7 @@
 
 示例 1：
 
-![](https://github.com/Carmenliukang/ARTS/blob/master/image/29/2.jpg)
+![](https://github.com/Carmenliukang/ARTS/blob/master/image/30/2.jpg)
 
     输入：root = [1,2,3]
     输出：6
@@ -27,7 +27,7 @@
 
 示例 2：
 
-![](https://github.com/Carmenliukang/ARTS/blob/master/image/29/3.jpg)
+![](https://github.com/Carmenliukang/ARTS/blob/master/image/30/3.jpg)
 
     输入：root = [-10,9,20,null,null,15,7]
     输出：42
