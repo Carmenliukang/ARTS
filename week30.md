@@ -94,8 +94,34 @@ todo
 
 ## Share
 
-> [todo](todo)
+> [不同路径题目总结](https://github.com/Carmenliukang/ARTS/blob/master/week30.md#share)
 
 ### 概述
 
-todo
+[不同路径](https://leetcode-cn.com/problems/unique-paths)
+
+[不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii)
+
+### 总结
+
+```python
+
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        # 生成相关的 二维数组
+        dp = [[0] * n for _ in range(m)]
+        # 第一行特殊逻辑处理
+        for i in range(m):
+            dp[i][0] = 1
+
+        # 第一列特殊逻辑处理
+        for j in range(n):
+            dp[0][j] = 1
+
+        for i in range(1, m):
+            for j in range(1, n):
+                # 考虑变量，一次进行递归
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
+        return dp[-1][-1]
+```
+
