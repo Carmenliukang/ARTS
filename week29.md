@@ -102,11 +102,11 @@ class Solution:
 ### 概述
 
 1. The ability to code is not enough
-   1. To become a software engineer in 2021, you have to communicate your ideas and solutions.
-   
+    1. To become a software engineer in 2021, you have to communicate your ideas and solutions.
+
 2. Be a good team player but don’t shy away from challenging problems
-   1. Although working as part of a team is essential, it’s also important not to shy away from challenging problems.
-   
+    1. Although working as part of a team is essential, it’s also important not to shy away from challenging problems.
+
 3. Be creative and inventive
 
 4. Be a product person
@@ -114,7 +114,6 @@ class Solution:
 5. Learn new programming languages and frameworks
 
 6. Explore different areas of technology development
-
 
 ***
 
@@ -164,19 +163,20 @@ N = 3, W = 4
 wt = [2, 1, 3]
 val = [4, 2, 3]
 ```
+
 算法返回 6，选择前两件物品装进背包，总重量 3 小于W，可以获得最大价值 6。
 
-
 1. 「状态」和「选择」
-   1. 状态：如何才能描述现在的问题局面？
-      1. 背包的容量
-      2. 可选择的物品
+    1. 状态：如何才能描述现在的问题局面？
+        1. 背包的容量
+        2. 可选择的物品
 
 2. dp 数组
-   1. 二维数组
-   2. 物品 当前最大总容量为 W
+    1. 二维数组
+    2. 物品 当前最大总容量为 W
 
 3. 选择
+
 ```
 int dp[N+1][W+1]
 dp[0][..] = 0
@@ -192,6 +192,7 @@ return dp[N][W]
 ```
 
 4. 伪代码>代码
+
 ```
 int knapsack(int W, int N, vector<int>& wt, vector<int>& val) {
     // vector 全填入 0，base case 已初始化
