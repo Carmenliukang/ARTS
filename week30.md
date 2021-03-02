@@ -74,21 +74,79 @@ class Solution:
 
 ## Review
 
-> [todo](todo)
+> [Redis-消息队列](https://time.geekbang.org/column/article/284291)
 
 ### 概述
 
-todo
+消息队列:
+1. 消息保存
+2. 处理重复消息
+3. 保证消息可靠性
+
+### 基于 List 的消息队列解决方案
+1. List 本身就是按先进先出的顺序对数据进行存取的，所以，如果使用 List 作为消息队列保存消息的话，就已经能满足消息保序的需求了。
+
+非阻塞
+
+![](https://github.com/Carmenliukang/ARTS/blob/master/image/30/7.jpg)
+
+
+阻塞
+
+![](https://github.com/Carmenliukang/ARTS/blob/master/image/30/8.jpg)
+
+### 基于 Streams 的消息队列解决方案
+
+Streams 是 Redis 专门为消息队列设计的数据类型，它提供了丰富的消息队列操作命令。XADD：插入消息，保证有序，可以自动生成全局唯一 ID；XREAD：用于读取消息，可以按 ID 读取数据；XREADGROUP：按消费组形式读取消息；XPENDING 和 XACK：XPENDING 命令可以用来查询每个消费组内所有消费者已读取但尚未确认的消息，而 XACK 命令用于向消息队列确认消息处理已完成。
 
 ***
 
 ## Tip
 
-> [todo](todo)
+> [Redis-保存时间序列数据](https://time.geekbang.org/column/article/282478)
 
 ### 概述
 
-todo
+时间序列：以时间为关键字段，进行聚合分析
+
+方案列表：
+
+1. Hash
+2. Hash + Sorted Set
+3. RedisTimeSeries
+
+### Hash
+
+1. 单数据查询适合
+2. 范围查询较差
+   ![](https://github.com/Carmenliukang/ARTS/blob/master/image/30/4.jpg)
+
+### Hash + Sorted Set
+
+1. 单数据查询适合
+2. 范围查询也适合
+   
+![](https://github.com/Carmenliukang/ARTS/blob/master/image/30/4.jpg)
+
+使用原子性命令保证其原子性操作
+
+![](https://github.com/Carmenliukang/ARTS/blob/master/image/30/6.jpg)
+
+### RedisTimeSeries
+
+RedisTimeSeries 是 Redis 的一个扩展模块。它专门面向时间序列数据提供了数据类型和访问接口，并且支持在 Redis 实例上直接对数据进行按时间范围的聚合计算。
+
+因为 RedisTimeSeries 不属于 Redis 的内建功能模块，在使用时，我们需要先把它的源码单独编译成动态链接库 redistimeseries.so，再使用 loadmodule 命令进行加载，如下所示：
+
+```
+loadmodule redistimeseries.so
+```
+
+1. 用 TS.CREATE 命令创建时间序列数据集合；
+2. 用 TS.ADD 命令插入数据；
+3. 用 TS.GET 命令读取最新数据；
+4. 用 TS.MGET 命令按标签过滤查询数据集合；
+5. 用 TS.RANGE 支持聚合计算的范围查询。
 
 ***
 
