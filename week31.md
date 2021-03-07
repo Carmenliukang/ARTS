@@ -52,7 +52,7 @@
 
 ### 解析
 
-!()[https://github.com/Carmenliukang/ARTS/blob/master/image/31/2.png]
+![](https://github.com/Carmenliukang/ARTS/blob/master/image/31/2.png)
 
 ### coding
 
