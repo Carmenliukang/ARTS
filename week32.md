@@ -1,7 +1,7 @@
 # ARTS Week 32
 
 > ![](https://github.com/Carmenliukang/ARTS/blob/master/image/32/1.webp)
->> 静水流深，沧笙踏歌
+>> 当你走出家乡的时候，你就是你自己的家乡
 
 ***
 
