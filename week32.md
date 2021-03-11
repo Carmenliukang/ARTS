@@ -54,6 +54,12 @@
 
 ### 分析
 
+#### 分治算法
+
+1. 左子树
+2. 根节点
+3. 右子树
+
 #### 中序遍历方式
 
 ![](https://github.com/Carmenliukang/ARTS/blob/master/image/32/4.png)
@@ -81,7 +87,81 @@ E。但是如果右孩子存在，左孩子只能作为中间节点。 使用这
 
 ### coding
 
-pass
+```python
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    def __init__(self):
+        self.left_root = []
+        self.right_root = []
+        self.leaf_root = []
+
+    def boundaryOfBinaryTree(self, root: TreeNode) -> list[int]:
+
+        if root is None:
+            return []
+
+        if root.left:
+            self.addleftnode(root.left)
+        if root.left or root.right:
+            self.addleafroot(root)
+        if root.right:
+            self.addrightnode(root.right)
+        res = [root.val] + self.left_root + self.leaf_root + self.right_root[::-1]
+        return res
+
+    def isleaf(self, root):
+        if root.left is None and root.right is None:
+            return True
+        else:
+            return False
+
+    def addleafroot(self, root):
+        # 遍历叶子节点
+        if self.isleaf(root):
+            self.leaf_root.append(root.val)
+        if root.left:
+            self.addleafroot(root.left)
+        if root.right:
+            self.addleafroot(root.right)
+
+    def addleftnode(self, root):
+        # 左子树遍历，对于仅仅判断其最初的节点同步
+        if root is None:
+            return
+
+        if not self.isleaf(root):
+            self.left_root.append(root.val)
+
+        if root.left:
+            self.addleftnode(root.left)
+        else:
+            if root.right:
+                self.addleftnode(root.right)
+
+    def addrightnode(self, root):
+        # 右子树遍历，对于仅仅判断其最初的节点同步
+        if root is None:
+            return
+
+        if not self.isleaf(root):
+            self.right_root.append(root.val)
+
+        if root.right:
+            self.addrightnode(root.right)
+        else:
+            if root.left:
+                self.addrightnode(root.left)
+
+
+```
 
 ***
 
