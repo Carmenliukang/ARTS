@@ -65,7 +65,7 @@
 - flag = 0：根节点
 - flag = 1：左边界节点
 - flag = 2：右边界节点
-- flag = 3 ：其它（中间节点） 我们使用三个列表
+- flag = 3：其它（中间节点） 我们使用三个列表
 
 left_boundary left_boundary，right_boundary right_boundary 和 leavesleaves 存储对应的节点。
 
