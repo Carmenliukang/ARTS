@@ -177,17 +177,49 @@ todo
 
 ## Tip
 
-> [todo](todo)
+> [Redis-突然变慢归类](https://time.geekbang.org/column/article/286549)
 
 ### 概述
 
-todo
+Redis 可能会突然变得很慢，展示具体的方法，然后依次进行判定。
+
+#### 如何确定变慢
+
+1. 机器性能方面：redis-cli 命令提供了–intrinsic-latency 查看 基线性能，如果运行时延迟时基准性能的2倍，那么就说明有延迟。
+
+```shell
+./redis-cli --intrinsic-latency 120
+Max latency so far: 17 microseconds.
+Max latency so far: 44 microseconds.
+Max latency so far: 94 microseconds.
+Max latency so far: 110 microseconds.
+Max latency so far: 119 microseconds.
+
+36481658 total runs (avg latency: 3.2893 microseconds / 3289.32 nanoseconds per run).
+Worst run took 36x longer than the average latency.
+
+```
+
+2. 网络影响：iPerf 工具
+
+#### 诊断过程
+
+![](https://github.com/Carmenliukang/ARTS/blob/master/image/32/5.jpg)
+
+1. 慢查询命令
+    1. https://redis.io/commands/ 官网查询io时间
+    2. Redis LOG
+    3. latency monitor
+
+2. 过期Keys 操作
+    1. ACTIVE_EXPIRE_CYCLE_LOOKUPS_PER_LOOP 设置默认是 20
+    2. 大量的 key 同一时间过期
 
 ***
 
 ## Share
 
-> [todo](todo)
+> [工作系统调用](https://github.com/Carmenliukang/ARTS/blob/master/week32.md#share)
 
 ### 概述
 
