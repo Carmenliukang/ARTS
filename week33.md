@@ -86,11 +86,94 @@ todo
 
 ## Tip
 
-> [todo](todo)
+> [Redis-变慢原因](https://time.geekbang.org/column/article/287819)
 
 ### 概述
 
-todo
+1. 文件系统
+2. 操作系统
+
+![](https://github.com/Carmenliukang/ARTS/blob/master/image/33/3.jpg)
+
+#### 文件系统：AOF 模式
+
+AOF日志支持 ：
+
+1. no
+2. everysec
+3. always
+
+文件系统策略：
+
+1. write
+    1. 只写入内河缓存区，然后返回。不用等待日志写入到磁盘中。
+2. fsync
+    1. 日志写入磁盘后返回，耗时比较长
+
+![](https://github.com/Carmenliukang/ARTS/blob/master/image/33/4.jpg)
+
+**细节点：**
+
+1. everysec
+    1. 可以允许丢失1s的操作
+    2. 后台子线程异步调用 fsync
+
+2. always
+    1. 主进程同步写入
+    2. 每次操作都会写入磁盘。保证不会丢失。
+
+AOF 重写机制
+
+1. 避免AOF日志过大
+2. 使用子进程同步
+3. 潜在问题：
+    1. AOF 重写会对磁盘进行大量 IO 操作，同时，fsync 又需要等到数据写到磁盘后才能返回，所以，当 AOF 重写的压力比较大时，就会导致 fsync 被阻塞。虽然 fsync 是由后台子线程负责执行的，但是，主线程会监控
+       fsync 的执行进度。
+    2. 当主线程使用后台子线程执行了一次 fsync，需要再次把新接收的操作记录写回磁盘时，如果主线程发现上一次的 fsync 还没有执行完，那么它就会阻塞。所以，如果后台子线程执行的 fsync 频繁阻塞的话（比如 AOF
+       重写占用了大量的磁盘 IO 带宽），主线程也会阻塞，导致 Redis 性能变慢。
+
+![](https://github.com/Carmenliukang/ARTS/blob/master/image/33/5.jpg)
+
+##### 解决方案
+
+1. 查看配置 appendfsync
+2. 如果业务应用对延迟非常敏感，但同时允许一定量的数据丢失，那么，可以把配置项 no-appendfsync-on-rewrite 设置为 yes，
+3. 使用固态硬盘
+
+#### 操作系统：swap
+
+内存 swap 是操作系统里将内存数据在内存和磁盘间来回换入和换出的机制，涉及到磁盘的读写，所以，一旦触发 swap，无论是被换入数据的进程，还是被换出数据的进程，其性能都会受到慢速磁盘读写的影响。
+
+原因：物理内存不足
+
+1. Redis 实例自身使用了大量的内存，导致物理机器的可用内存不足；
+2. 和 Redis 实例在同一台机器上运行的其他进程，在进行大量的文件读写操作。文件读写本身会占用系统内存，这会导致分配给 Redis 实例的内存量变少，进而触发 Redis 发生 swap。
+
+##### 解决方案
+
+1. redis-cli info | grep process_id
+2. cd /proc/5332
+3. cat smaps | egrep '^(Swap|Size)'
+
+```shell
+
+$cat smaps | egrep '^(Swap|Size)'
+Size: 584 kB
+Swap: 0 kB
+Size: 4 kB
+Swap: 4 kB
+Size: 4 kB
+Swap: 0 kB
+Size: 462044 kB
+Swap: 462008 kB
+Size: 21392 kB
+Swap: 0 kB
+```
+
+每一行 Size 表示的是 Redis 实例所用的一块内存大小，而 Size 下方的 Swap 和它相对应，表示这块 Size 大小的内存区域有多少已经被换出到磁盘上了。如果这两个值相等，就表示这块内存区域已经完全被换出到磁盘了。
+
+作为内存数据库，Redis 本身会使用很多大小不一的内存块，所以，你可以看到有很多 Size 行，有的很小，就是 4KB，而有的很大，例如 462044KB。不同内存块被换出到磁盘上的大小也不一样，例如刚刚的结果中的第一个 4KB
+内存块，它下方的 Swap 也是 4KB，这表示这个内存块已经被换出了；另外，462044KB 这个内存块也被换出了 462008KB，差不多有 462MB。
 
 ***
 
