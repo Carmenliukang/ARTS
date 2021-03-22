@@ -76,34 +76,37 @@ class NumMatrix:
 
 ## Review
 
-> [https://medium.com/madhash/5-signs-that-youre-wasting-your-life-as-a-developer-131607ff1998](5 Signs That You’re Wasting Your Life As A Developer)
+> [5 Signs That You’re Wasting Your Life As A Developer](https://medium.com/madhash/5-signs-that-youre-wasting-your-life-as-a-developer-131607ff1998)
 
 ### 概述
 
-Once you get a job, it’s easy to get stuck into trading your time for a paycheck. You take the commute, get into the office, brew your coffee, take it to your desk, sit down, and start tapping.
+Once you get a job, it’s easy to get stuck into trading your time for a paycheck. You take the commute, get into the
+office, brew your coffee, take it to your desk, sit down, and start tapping.
 
-Sometimes, there might be a meeting here and there, a debate with your fellow developers over a module or implementation.
+Sometimes, there might be a meeting here and there, a debate with your fellow developers over a module or
+implementation.
 
 You end your day by going home, going to sleep, and then waking up to do it all over again.
 
 It sounds monotonous. But you convinced yourself otherwise.
 
-Because work is part of life — just like bills, rent, utilities, groceries, and every other little thing in life that chips away at your paycheck.
+Because work is part of life — just like bills, rent, utilities, groceries, and every other little thing in life that
+chips away at your paycheck.
 
 Then one day, you stare at your reflection and asking life’s ultimate question: is this it?
 
 Here are 5 signs that you’re wasting your life as a developer, the symptoms and how to remedy it.
 
 1. You’ve forgotten your dreams
-   
-   1. Solution: write down all your dreams and pick your top 5
-    
-“The comfort zone is a psychological state in which one feels familiar, safe, at ease, and secure. You never change your life until you step out of your comfort zone; change begins at the end of your comfort zone.”
-― Roy T. Bennett
+
+    1. Solution: write down all your dreams and pick your top 5
+
+“The comfort zone is a psychological state in which one feels familiar, safe, at ease, and secure. You never change your
+life until you step out of your comfort zone; change begins at the end of your comfort zone.” ― Roy T. Bennett
 
 2. Your projects are boring
-    1.   Your projects are boring
-    
+    1. Your projects are boring
+
 
 3. You can’t see your future you
 
@@ -222,7 +225,7 @@ Swap: 0 kB
 
 ##### 问题
 
-最基本的背包问题就是01背包问题（01 knapsack problem）： 
+最基本的背包问题就是01背包问题（01 knapsack problem）：
 
 一共有N件物品，第i（i从1开始）件物品的重量为w[i]，价值为v[i]。 在总重量不超过背包承载上限W的情况下，能够装入背包的最大价值是多少？
 
@@ -264,7 +267,5 @@ def knapsack_0_1(W, N, wt, val):
 
 一共有N种物品，每种数量不限，第i（i从1开始）件物品的重量为w[i]，价值为v[i]。 在总重量不超过背包承载上限W的情况下，能够装入背包的最大价值是多少？
 
-
-核心转换方程：
-    dp[i][j] = max(dp[i - 1][j], dp[i][j - wt[i - 1]] + val[i - 1])
+核心转换方程： dp[i][j] = max(dp[i - 1][j], dp[i][j - wt[i - 1]] + val[i - 1])
 
