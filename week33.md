@@ -76,11 +76,40 @@ class NumMatrix:
 
 ## Review
 
-> [todo](todo)
+> [https://medium.com/madhash/5-signs-that-youre-wasting-your-life-as-a-developer-131607ff1998](5 Signs That You’re Wasting Your Life As A Developer)
 
 ### 概述
 
-todo
+Once you get a job, it’s easy to get stuck into trading your time for a paycheck. You take the commute, get into the office, brew your coffee, take it to your desk, sit down, and start tapping.
+
+Sometimes, there might be a meeting here and there, a debate with your fellow developers over a module or implementation.
+
+You end your day by going home, going to sleep, and then waking up to do it all over again.
+
+It sounds monotonous. But you convinced yourself otherwise.
+
+Because work is part of life — just like bills, rent, utilities, groceries, and every other little thing in life that chips away at your paycheck.
+
+Then one day, you stare at your reflection and asking life’s ultimate question: is this it?
+
+Here are 5 signs that you’re wasting your life as a developer, the symptoms and how to remedy it.
+
+1. You’ve forgotten your dreams
+   
+   1. Solution: write down all your dreams and pick your top 5
+    
+“The comfort zone is a psychological state in which one feels familiar, safe, at ease, and secure. You never change your life until you step out of your comfort zone; change begins at the end of your comfort zone.”
+― Roy T. Bennett
+
+2. Your projects are boring
+    1.   Your projects are boring
+    
+
+3. You can’t see your future you
+
+4. Your edge of knowledge is still the same
+5. You dread your day
+    1. Solution: Take a break and reassess your life
 
 ***
 
@@ -179,8 +208,63 @@ Swap: 0 kB
 
 ## Share
 
-> [todo](todo)
+> [0-1背包类型题目总结](https://github.com/Carmenliukang/ARTS/blob/master/week33.md#share)
 
 ### 概述
 
-todo
+背包问题（Knapsack problem）是一种组合优化的NP完全（NP-Complete，NPC）问题。
+
+问题通用描述：
+
+给定一组物品，每种物品都有自己的重量和价格，在限定的总重量内，我们如何选择，才能使得物品的总价格最高
+
+#### 0/1背包问题
+
+##### 问题
+
+最基本的背包问题就是01背包问题（01 knapsack problem）： 
+
+一共有N件物品，第i（i从1开始）件物品的重量为w[i]，价值为v[i]。 在总重量不超过背包承载上限W的情况下，能够装入背包的最大价值是多少？
+
+##### 0/1 背包问题
+
+状态 N个物品 W重量
+
+选择 第I个物品 是否放入 F[i][w] = max(F[i-1][w],(F[i-1][w-Wt[i]]+val[i]))
+
+考虑边界条件 w-Wt[i]>0
+
+##### code
+
+```python
+def knapsack_0_1(W, N, wt, val):
+    """
+    0-1 背包问题总结
+    :param W: 背包最大可承受重量
+    :param N: 背包最大可接收数量
+    :param wt: list[int] 每个物品的重量
+    :param val: list[int] 每个物品的价值
+    :return: int 最大价值的数量
+    """
+    dp = [[0] * (W + 1) for _ in range(N + 1)]
+
+    for i in range(N):
+        for j in range(W):
+            # 这里有边界问题，因为可能小于0的情况
+            if j - wt[i - 1] < 0:
+                dp[i][j] = dp[i - 1][j]
+            else:
+                dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - wt[i - 1]] + val[i - 1])
+
+    return dp[N][W]
+
+```
+
+#### 0/1 完全背包
+
+一共有N种物品，每种数量不限，第i（i从1开始）件物品的重量为w[i]，价值为v[i]。 在总重量不超过背包承载上限W的情况下，能够装入背包的最大价值是多少？
+
+
+核心转换方程：
+    dp[i][j] = max(dp[i - 1][j], dp[i][j - wt[i - 1]] + val[i - 1])
+
