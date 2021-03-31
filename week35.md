@@ -1,4 +1,3 @@
-```
 # ARTS Week 35
 
 > ![](https://github.com/Carmenliukang/ARTS/blob/master/image/35/1.jpg)
@@ -34,14 +33,12 @@
 
 ### coding
 
-````````
-
 ```python
 class Solution:
     def change(self, amount: int, coins: list[int]) -> int:
         dp = [0] * (amount + 1)
         dp[0] = 1
-        
+
         for coin in coins:
             for x in range(coin, amount + 1):
                 dp[x] += dp[x - coin]
@@ -52,7 +49,7 @@ class Solution:
 
 ## Review
 
-[comment]: <> (> [todo]&#40;todo&#41;)
+> [todo]()
 
 ### 概述
 
