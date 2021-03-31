@@ -1,7 +1,7 @@
 # ARTS Week 35
 
 > ![](https://github.com/Carmenliukang/ARTS/blob/master/image/35/1.jpg)
->> 凡是过往，皆为序章
+>> 什么也无法舍弃的人，什么也改变不了
 
 ***
 
