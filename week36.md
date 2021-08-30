@@ -114,28 +114,66 @@ class Solution:
 
 ## Review
 
-> [todo](todo)
+> [K8S Base](https://kubernetes.io/zh/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/)
 
 ### 概述
 
-todo
+K8S 相关的教程
 
 ***
 
 ## Tip
 
-> [todo](todo)
+> [为什么我只查一行的语句，也执行这么慢？](https://time.geekbang.org/column/article/74687)
 
 ### 概述
 
-todo
+总结和分析 查询单行的慢特性
+
+#### 第一类：查询长时间不返回
+
+一般分为这几种情况：
+
+1. 等 MDL 锁
+2. 等 flush
+3. 等行锁
+
+相关数据同步
+
+#### 第二类：查询慢
+
+可以分为以下几种情况：
+
+1. 未使用索引，全表扫描
+2. 本身快速查询导致系统出现问题
 
 ***
 
 ## Share
 
-> [todo](todo)
+> [股票DP题目总结](https://github.com/Carmenliukang/ARTS/blob/master/week36.md#share)
 
 ### 概述
 
-todo`
+> [买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
+>
+> [买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
+>
+> [最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
+>
+> [最佳买卖股票时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
+>
+> [买卖股票的最佳时机 III](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/)
+>
+> [买卖股票的最佳时机 IV](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv)
+
+### 方法论
+
+整体的问题都可以按照这种逻辑修改
+
+1. base case
+2. 状态
+3. 选择
+4. 函数/类
+
+所以这些方式和策略的需要注意是否需要顺序性，比如：有冷冻期/交易次数限制 这些是顺序性逻辑修改，同时能够实现状态的转换。
