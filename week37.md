@@ -56,8 +56,8 @@ from typing import List
 
 
 class Solution:
-    # todo 这里其实还可以再次优化一下，整体的内存和性能有一些低
     def canJump(self, nums: List[int]) -> bool:
+        # todo 这里其实还可以再次优化一下，整体的内存和性能有一些低
         size = len(nums)
 
         if size == 1:
@@ -71,11 +71,28 @@ class Solution:
 
         return dp[-1] >= size - 1
 
+    def canJumpMethod(self, nums: List[int]) -> bool:
+        # 这里部分使用 状态压缩，所以内存会节省很多，同时如果判断这个最远距离超过size-1，那么也说明一定可以跳到
+        size = len(nums)
+
+        if size == 1:
+            return True
+
+        max_num = nums[0]
+
+        for i in range(1, size):
+            if max_num >= i:
+                max_num = max(i + nums[i], max_num)
+                if max_num >= size - 1:
+                    return True
+
+        return False
+
 ```
 
 ### 总结
 
-通过确定最基本的 base case，那么应该就可以确定一下相关的设置
+通过确定最基本的 base case，那么就应该能够确定状态，然后就可以选择。
 
 ***
 
