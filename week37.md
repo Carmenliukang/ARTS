@@ -1,4 +1,4 @@
-# ARTS Week 37
+_# ARTS Week 37
 
 > ![](https://github.com/Carmenliukang/ARTS/blob/master/image/37/1.jpg)
 >> 从零开始
@@ -68,7 +68,7 @@ class Solution:
         for i in range(1, size):
             if dp[i - 1] >= i:
                 dp[i] = max(i + nums[i], dp[i - 1])
-
+        # 最后 注意点是 需要 N-1 步骤
         return dp[-1] >= size - 1
 
     def canJumpMethod(self, nums: List[int]) -> bool:
@@ -118,8 +118,23 @@ todo
 
 ## Share
 
-> [todo](todo)
+> [DP 方法论总结](https://github.com/Carmenliukang/ARTS/blob/master/week37.md#share)
 
 ### 概述
 
-todo
+相关题目总结：
+
+> [跳跃游戏](https://leetcode-cn.com/problems/jump-game)
+>
+> [跳跃游戏 II](https://leetcode-cn.com/problems/jump-game-ii/)
+
+### 分析
+
+首先确定状态，然后选择，那么这个选择是可以顺序性，例如：
+
+1. [最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
+    1. 固定顺序选择：买入 卖出 冷冻期 三种状态
+2. [跳跃游戏 II](https://leetcode-cn.com/problems/jump-game-ii/)
+    1. 向前选择
+3. [买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
+    1. 与之前的数据比较选择，这种也是大部分的
