@@ -108,11 +108,40 @@ todo
 
 ## Tip
 
-> [todo](todo)
+> [为什么还会有kill 不掉的语句](https://time.geekbang.org/column/article/79026)
 
 ### 概述
 
-todo
+kill 中会有kill 时间较长，导致的数据出现问题
+
+#### kill 类型
+
+1. kill query + 线程id
+2. kill connection + 线程id
+
+但是中间有可能会出现 killed 这种情况
+
+具体的kill 流程
+
+![](https://github.com/Carmenliukang/ARTS/blob/master/image/37/2.webp)
+
+#### 收到 kill 以后，线程做什么？
+
+1. kill 并不是马上停止，而是告诉执行线程说：这条语句已经不需要执行了，可以开始 "执行停止的逻辑"
+    1. 把 session B 的运行状态改成 THD::KILL_QUERY(将变量 killed 赋值为 THD::KILL_QUERY)；
+    2. 给 session B 的执行线程发一个信号。
+
+#### 展示其他的现象
+
+1. set global innodb_thread_concurrency=2
+2. 执行如下操作：
+    1. ![](https://github.com/Carmenliukang/ARTS/blob/master/image/37/3.webp)
+    2. 显示结果：
+        1. sesssion C 执行的时候被堵住了；
+        2. 但是 session D 执行的 kill query C 命令却没什么效果，
+        3. 直到 session E 执行了 kill connection 命令，才断开了 session C 的连接，提示“Lost connection to MySQL server during query”，
+        4. 但是这时候，如果在 session E 中执行 show processlist，你就能看到下面这个图。
+        5. ![](https://github.com/Carmenliukang/ARTS/blob/master/image/37/4.webp)
 
 ***
 
