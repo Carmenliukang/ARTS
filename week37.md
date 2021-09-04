@@ -1,4 +1,4 @@
-_# ARTS Week 37
+# ARTS Week 37
 
 > ![](https://github.com/Carmenliukang/ARTS/blob/master/image/37/1.jpg)
 >> 从零开始
