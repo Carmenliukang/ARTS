@@ -165,6 +165,11 @@ mysql -h$host -P$port -u$user -p$pwd -e "select * from db1.t" > $target_file
 
 #### WAL机制
 
+Write-Ahead Logging，先写日志，再写磁盘。
+
+具体来说，当有一条记录需要更新的时候，InnoDB 引擎就会先把记录写到 redo log（粉板）里面，并更新内存，这个时候更新就算完成了。同时，InnoDB
+引擎会在适当的时候，将这个操作记录更新到磁盘里面，而这个更新往往是在系统比较空闲的时候做，这就像打烊以后掌柜做的事。
+
 #### BP管理
 
 核心因素是命中率
