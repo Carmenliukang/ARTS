@@ -213,8 +213,8 @@ young 区域，靠近链表尾部的 3/8 是 old 区域。改进后的 LRU 算�
 
 ## Share
 
-> [todo](todo)
+> [关于业务抽象逻辑](https://github.com/Carmenliukang/ARTS/blob/master/week38.md#share)
 
 ### 概述
 
-todo
+数据同步修改策略方式支持
