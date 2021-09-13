@@ -99,11 +99,26 @@ class Solution:
 
 ## Review
 
-> [todo](todo)
+> [FastAPI Documentation](https://fastapi.tiangolo.com/)
 
 ### 概述
 
-todo
+FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python
+type hints.
+
+The key features are:
+
+* **Fast**: Very high performance, on par with NodeJS and Go (thanks to Starlette and Pydantic). One of the fastest
+  Python frameworks available.
+
+* **Fast to code**: Increase the speed to develop features by about 200% to 300%. *
+
+* **Fewer bugs**: Reduce about 40% of human (developer) induced errors. *
+* **Intuitive**: Great editor support. Completion everywhere. Less time debugging.
+* **Easy**: Designed to be easy to use and learn. Less time reading docs.
+* **Short**: Minimize code duplication. Multiple features from each parameter declaration. Fewer bugs.
+* **Robust**: Get production-ready code. With automatic interactive documentation. Standards-based: Based on (and fully
+  compatible with) the open standards for APIs: OpenAPI (previously known as Swagger) and JSON Schema.
 
 ***
 
@@ -213,8 +228,22 @@ young 区域，靠近链表尾部的 3/8 是 old 区域。改进后的 LRU 算�
 
 ## Share
 
-> [关于业务抽象逻辑](https://github.com/Carmenliukang/ARTS/blob/master/week38.md#share)
+> [关于业务逻辑抽象](https://github.com/Carmenliukang/ARTS/blob/master/week38.md#share)
 
 ### 概述
 
-整体的抽象业务逻辑确定需要修改很多东西。
+**业务抽象** : 整体可以设计成 底层无状态抽象，中层业务组建抽象，业务线开发
+
+首先从公司角度出发，对于创业公司/蓝海时代，需要快速切入不同场景，能够实现快速接入。这种模式下需要走广度优先(DFS)策略。所以需要对自身的产品进行较为抽象的逻辑思考。
+
+以机器人为例：
+
+1. 位置
+2. 信息
+3. 动作
+
+这种抽象能够快速的搭建，底层的逻辑抽象。实现一种最基础的逻辑抽象，无状态、无业务的底层抽象。
+
+中层是业务组建抽象：将中层不同业务需要的公共组件，实现可插播方式快速支撑。例如：支付模块/鉴权模块/基础位置模块/N叉树模块 等等。
+
+业务线开发：这里会有很多定制化开发项目，例如：第三方对接/特殊推送/定制化回调等。
