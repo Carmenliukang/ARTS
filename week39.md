@@ -138,6 +138,31 @@ CAP 定理是分布式系统设计中最基础，也是最为关键的理论。�
 
 ![](https://github.com/Carmenliukang/ARTS/blob/master/image/39/1.webp)
 
+#### 错误假设
+
+1. 网络是稳定的。网络传输的延迟是零。
+2. 网络的带宽是无穷大。网络是安全的。
+3. 网络的拓扑不会改变。
+4. 只有一个系统管理员。
+5. 传输数据的成本为零。
+6. 整个网络是同构的。
+
+### 资料总结
+
+[Distributed systems theory for the distributed systems engineer](https://www.the-paper-trail.org/post/2014-08-09-distributed-systems-theory-for-the-distributed-systems-engineer/)
+
+[Distributed Systems for Fun and Profit](http://book.mixu.net/distsys/)
+这是一本小书，涵盖了分布式系统中的关键问题，包括时间的作用和不同的复制策略。后文中对这本书有较详细的介绍。
+
+[Notes on distributed systems for young bloods](https://www.somethingsimilar.com/2013/01/14/notes-on-distributed-systems-for-young-bloods/)
+，这篇文章中没有理论，是一份适合新手阅读的分布式系统实践笔记。
+
+[A Note on Distributed Systems](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.41.7628)
+，这是一篇经典的论文，讲述了为什么在分布式系统中，远程交互不能像本地对象那样进行。
+
+[The fallacies of distributed computing](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
+，每个分布式系统新手都会做的 8 个错误假设，并探讨了其会带来的影响。上文中专门对这篇文章做了介绍。
+
 
 ***
 
