@@ -95,11 +95,23 @@ class Solution:
 
 ## Review
 
-> [todo](todo)
+> [[Tutorial, Part 1] How to develop Go gRPC microservice with HTTP/REST endpoint, middleware, Kubernetes deployment, etc.](https://medium.com/@amsokol.com/tutorial-how-to-develop-go-grpc-microservice-with-http-rest-endpoint-middleware-kubernetes-daebb36a97e9)
 
 ### 概述
 
-todo
+I want to provide step by step tutorial how to develop simple CRUD “To Do list” microservice with gRPC and HTTP/REST
+endpoints. I demonstrate how to write tests and add middleware (request-ID and logging/tracing) to microservice also. I
+provide example how to build and deploy this microservice to Kubernetes at the end.
+
+#### Table of Content
+
+1. about how to create gRPC CRUD service and client
+2. about how to add HTTP/REST endpoint to the gRPC service
+3. about how to add middleware (e.g. logging/tracing) to gRPC service and HTTP/REST endpoint as well
+4. going to be dedicated how to add Kubernetes deployment configuration with health check and how to build and deploy
+   project to Google Cloud
+
+
 
 ***
 
@@ -172,7 +184,7 @@ CAP 定理是分布式系统设计中最基础，也是最为关键的理论。�
 
 ### 概述
 
-整理了一些模板。
+整理了部分基于 ORM框架的同步/异步 相关组建。
 
 ### PSql
 
