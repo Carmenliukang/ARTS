@@ -103,7 +103,7 @@ I want to provide step by step tutorial how to develop simple CRUD “To Do list
 endpoints. I demonstrate how to write tests and add middleware (request-ID and logging/tracing) to microservice also. I
 provide example how to build and deploy this microservice to Kubernetes at the end.
 
-#### Table of Content
+### Table of Content
 
 1. about how to create gRPC CRUD service and client
 2. about how to add HTTP/REST endpoint to the gRPC service
@@ -111,7 +111,10 @@ provide example how to build and deploy this microservice to Kubernetes at the e
 4. going to be dedicated how to add Kubernetes deployment configuration with health check and how to build and deploy
    project to Google Cloud
 
+#### create gRPC CRUD service
 
+1. https://github.com/amsokol/go-grpc-http-rest-microservice-tutorial/tree/part1
+2. https://github.com/golang-standards/project-layout
 
 ***
 
