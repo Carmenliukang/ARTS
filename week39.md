@@ -135,6 +135,7 @@ provide example how to build and deploy this microservice to Kubernetes at the e
 
 * Distributed systems theory for the distributed systems engineer
 * FLP Impossibility Result
+
 * An introduction to distributed systems
 * Distributed Systems for fun and profit
 * Distributed Systems: Principles and Paradigms
