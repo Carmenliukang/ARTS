@@ -266,8 +266,118 @@ trade-off 的事。
 
 ## Share
 
-> [Dapr Actor](https://github.com/Carmenliukang/ARTS/blob/master/week42.md#share)
+> [Dapr Pub/Sub](https://github.com/Carmenliukang/ARTS/blob/master/week42.md#share)
 
 ### 概述
 
-todo
+**How-To: Publish a message and subscribe to a topic**
+
+Pub/Sub is a common pattern in a distributed system with many services that want to utilize decoupled, asynchronous
+messaging. Using Pub/Sub, you can enable scenarios where event consumers are decoupled from event producers.
+
+Dapr provides an extensible Pub/Sub system with At-Least-Once guarantees, allowing developers to publish and subscribe
+to topics. Dapr provides components for pub/sub, that enable operators to use their preferred infrastructure, for
+example Redis Streams, Kafka, etc.
+
+#### Content Types
+
+When publishing a message, it’s important to specify the content type of the data being sent. Unless specified, Dapr
+will assume text/plain. When using Dapr’s HTTP API, the content type can be set in a Content-Type header. gRPC clients
+and SDKs have a dedicated content type parameter.
+
+#### Step 1: Setup the Pub/Sub component
+
+The following example creates applications to publish and subscribe to a topic called deathStarStatus.
+
+![](https://github.com/Carmenliukang/ARTS/blob/master/image/42/2.png)
+
+```yaml
+
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: pubsub
+spec:
+  type: pubsub.redis
+  version: v1
+  metadata:
+    - name: redisHost
+      value: localhost:6379
+    - name: redisPassword
+      value: ""
+
+```
+
+#### Step 2: Subscribe to topics
+
+Dapr allows two methods by which you can subscribe to topics:
+
+* **Declaratively**, where subscriptions are defined in an external file.
+* **Programmatically**, where subscriptions are defined in user code.
+
+##### Declarative subscriptions
+
+```yaml
+apiVersion: dapr.io/v1alpha1
+kind: Subscription
+metadata:
+  name: myevent-subscription
+spec:
+  topic: deathStarStatus
+  route: /dsstatus
+  pubsubname: pubsub
+scopes:
+  - app1
+  - app2
+
+```
+
+##### Example
+
+```python
+
+import flask
+from flask import request, jsonify
+from flask_cors import CORS
+import json
+import sys
+
+app = flask.Flask(__name__)
+CORS(app)
+
+
+@app.route('/dsstatus', methods=['POST'])
+def ds_subscriber():
+    print(request.json, flush=True)
+    return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
+
+
+app.run()
+
+```
+
+#### Step 3: Publish a topic
+
+To publish a topic you need to run an instance of a Dapr sidecar to use the pubsub Redis component. You can use the
+default Redis component installed into your local environment.
+
+```shell
+dapr run --app-id testpubsub --dapr-http-port 3500
+
+# test 
+dapr publish --publish-app-id testpubsub --pubsub pubsub --topic deathStarStatus --data '{"status": "completed"}'
+
+
+```
+
+#### Step 4: ACK-ing a message
+
+```python
+
+@app.route('/dsstatus', methods=['POST'])
+def ds_subscriber():
+    print(request.json, flush=True)
+    return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
+
+```
+
